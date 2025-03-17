@@ -1,0 +1,845 @@
+[
+  {
+    "id": "golden_crispy_chicken",
+    "title": "Golden Crispy Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 45,
+    "ingredients": [
+      {"name": "Chicken thighs", "quantity": "6 pieces"},
+      {"name": "All-purpose flour", "quantity": "1 ½ cups"},
+      {"name": "Paprika", "quantity": "2 tsp"},
+      {"name": "Garlic powder", "quantity": "1 tsp"},
+      {"name": "Salt", "quantity": "1 ½ tsp"},
+      {"name": "Black pepper", "quantity": "1 tsp"},
+      {"name": "Eggs", "quantity": "2"},
+      {"name": "Breadcrumbs", "quantity": "1 cup"},
+      {"name": "Vegetable oil", "quantity": "for frying"}
+    ],
+    "steps": [
+      {"description": "Pat chicken dry and season lightly with salt and pepper.", "timer": null},
+      {"description": "Combine flour, paprika, garlic powder, salt, and pepper in a bowl.", "timer": null},
+      {"description": "Beat eggs in a separate bowl.", "timer": null},
+      {"description": "Dip each chicken piece in flour mixture, then egg, and finally coat with breadcrumbs.", "timer": null},
+      {"description": "Heat vegetable oil in a frying pan over medium heat.", "timer": null},
+      {"description": "Fry chicken until golden and crispy, about 6-7 minutes per side.", "timer": 840},
+      {"description": "Drain excess oil on paper towels, let rest for 5 minutes before serving.", "timer": 300}
+    ],
+    "image": "assets/images/Golden Crispy Chicken.png"
+  },
+  {
+    "id": "chicktacular_blaze",
+    "title": "Chicktacular Blaze",
+    "category": "cluckmazing",
+    "isLocked": true,
+    "requiredCountToUnlock": 4,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 4,
+    "spicy": 5,
+    "timeInMinutes": 60,
+    "ingredients": [
+      {"name": "Chicken drumsticks", "quantity": "8 pieces"},
+      {"name": "Hot sauce", "quantity": "¾ cup"},
+      {"name": "Brown sugar", "quantity": "2 tbsp"},
+      {"name": "Smoked paprika", "quantity": "1 tbsp"},
+      {"name": "Cayenne pepper", "quantity": "1 tsp"},
+      {"name": "Garlic cloves, minced", "quantity": "4"},
+      {"name": "Butter", "quantity": "4 tbsp, melted"},
+      {"name": "Salt and pepper", "quantity": "to taste"},
+      {"name": "Green onions", "quantity": "for garnish"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 400°F (200°C). Line a baking sheet with foil and lightly oil.", "timer": null},
+      {"description": "Season drumsticks generously with salt, pepper, smoked paprika, and cayenne pepper.", "timer": null},
+      {"description": "Bake chicken drumsticks for 30 minutes, turning once halfway.", "timer": 1800},
+      {"description": "Mix hot sauce, brown sugar, garlic, and melted butter to create the glaze.", "timer": null},
+      {"description": "Brush chicken drumsticks thoroughly with glaze and bake for another 15 minutes.", "timer": 900},
+      {"description": "Increase oven temperature to broil for 2-3 minutes to caramelize glaze.", "timer": 180},
+      {"description": "Garnish with green onions before serving.", "timer": null}
+    ],
+    "image": "assets/images/Chicktacular Blaze.png"
+  },
+  {
+    "id": "juicy_herb_roasted_chicken",
+    "title": "Juicy Herb-Roasted Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 80,
+    "ingredients": [
+      {"name": "Whole chicken", "quantity": "1 (about 3-4 lbs)"},
+      {"name": "Olive oil", "quantity": "3 tbsp"},
+      {"name": "Rosemary, chopped", "quantity": "1 tbsp"},
+      {"name": "Thyme, chopped", "quantity": "1 tbsp"},
+      {"name": "Garlic cloves, minced", "quantity": "4"},
+      {"name": "Salt", "quantity": "2 tsp"},
+      {"name": "Black pepper", "quantity": "1 tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 375°F (190°C). Pat the chicken dry.", "timer": null},
+      {"description": "In a small bowl, mix olive oil, rosemary, thyme, garlic, salt, and pepper.", "timer": null},
+      {"description": "Rub the herb mixture all over the chicken, including under the skin if possible.", "timer": null},
+      {"description": "Place chicken in a roasting pan or baking dish and roast for about 60-70 minutes.", "timer": 4200},
+      {"description": "Check internal temperature: it should reach 165°F (74°C) in the thickest part.", "timer": null},
+      {"description": "Let the chicken rest for 10 minutes before carving and serving.", "timer": 600}
+    ],
+    "image": "assets/images/Juicy Herb-Roasted Chicken.png"
+  },
+  {
+    "id": "spicy_garlic_chicken_wings",
+    "title": "Spicy Garlic Chicken Wings",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 4,
+    "timeInMinutes": 40,
+    "ingredients": [
+      {"name": "Chicken wings", "quantity": "2 lbs"},
+      {"name": "Butter, melted", "quantity": "4 tbsp"},
+      {"name": "Hot sauce", "quantity": "½ cup"},
+      {"name": "Garlic cloves, minced", "quantity": "3"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Black pepper", "quantity": "½ tsp"},
+      {"name": "Chili flakes (optional)", "quantity": "½ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 400°F (200°C). Line a baking sheet with parchment paper.", "timer": null},
+      {"description": "Arrange wings on the baking sheet; season with salt and pepper.", "timer": null},
+      {"description": "Bake wings for 20 minutes, flip, then bake another 15 minutes.", "timer": 2100},
+      {"description": "Combine melted butter, hot sauce, minced garlic, and chili flakes (if using).", "timer": null},
+      {"description": "Toss the baked wings in the spicy garlic sauce and serve immediately.", "timer": null}
+    ],
+    "image": "assets/images/Spicy Garlic Chicken Wings.png"
+  },
+  {
+    "id": "honey_glazed_chicken_thighs",
+    "title": "Honey Glazed Chicken Thighs",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 55,
+    "ingredients": [
+      {"name": "Chicken thighs", "quantity": "6 pieces"},
+      {"name": "Honey", "quantity": "¼ cup"},
+      {"name": "Soy sauce", "quantity": "3 tbsp"},
+      {"name": "Garlic cloves, minced", "quantity": "3"},
+      {"name": "Ginger, minced", "quantity": "1 tsp"},
+      {"name": "Sesame oil", "quantity": "1 tbsp"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Black pepper", "quantity": "½ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 375°F (190°C). Lightly grease a baking dish.", "timer": null},
+      {"description": "In a small bowl, whisk honey, soy sauce, garlic, ginger, sesame oil, salt, and pepper.", "timer": null},
+      {"description": "Place chicken thighs in the baking dish and pour the sauce over them.", "timer": null},
+      {"description": "Bake for 40-45 minutes, basting with sauce halfway through.", "timer": 2700},
+      {"description": "Broil for the last 2-3 minutes to caramelize the glaze.", "timer": 180},
+      {"description": "Let the chicken rest for 5 minutes before serving.", "timer": 300}
+    ],
+    "image": "assets/images/Honey Glazed Chicken Thighs.png"
+  },
+  {
+    "id": "classic_chicken_parmesan",
+    "title": "Classic Chicken Parmesan",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 3,
+    "spicy": 1,
+    "timeInMinutes": 35,
+    "ingredients": [
+      {"name": "Chicken breasts", "quantity": "4"},
+      {"name": "All-purpose flour", "quantity": "½ cup"},
+      {"name": "Eggs, beaten", "quantity": "2"},
+      {"name": "Breadcrumbs", "quantity": "1 cup"},
+      {"name": "Parmesan cheese, grated", "quantity": "½ cup"},
+      {"name": "Marinara sauce", "quantity": "1 cup"},
+      {"name": "Mozzarella cheese, shredded", "quantity": "1 cup"},
+      {"name": "Olive oil", "quantity": "2 tbsp"},
+      {"name": "Salt and pepper", "quantity": "to taste"}
+    ],
+    "steps": [
+      {"description": "Season chicken breasts with salt and pepper. Preheat oven to 400°F (200°C).", "timer": null},
+      {"description": "Dredge chicken in flour, dip in beaten eggs, then coat with breadcrumbs mixed with Parmesan.", "timer": null},
+      {"description": "Heat olive oil in a skillet over medium-high heat. Sear chicken until golden, about 3 minutes per side.", "timer": 360},
+      {"description": "Transfer chicken to a baking dish, top with marinara sauce and mozzarella.", "timer": null},
+      {"description": "Bake for 15 minutes or until chicken is cooked through and cheese is bubbly.", "timer": 900}
+    ],
+    "image": "assets/images/Classic Chicken Parmesan.png"
+  },
+  {
+    "id": "creamy_garlic_butter_chicken",
+    "title": "Creamy Garlic Butter Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 30,
+    "ingredients": [
+      {"name": "Chicken breasts", "quantity": "2 large"},
+      {"name": "Butter", "quantity": "3 tbsp"},
+      {"name": "Garlic cloves, minced", "quantity": "4"},
+      {"name": "Heavy cream", "quantity": "¾ cup"},
+      {"name": "Chicken broth", "quantity": "½ cup"},
+      {"name": "Dried thyme", "quantity": "1 tsp"},
+      {"name": "Salt and pepper", "quantity": "to taste"}
+    ],
+    "steps": [
+      {"description": "Season chicken with salt and pepper. Melt 2 tbsp of butter in a skillet over medium-high heat.", "timer": null},
+      {"description": "Sear chicken breasts for about 4-5 minutes per side until golden. Remove and set aside.", "timer": 540},
+      {"description": "Add remaining butter, garlic, and thyme to the skillet; cook for 1 minute.", "timer": 60},
+      {"description": "Pour in chicken broth and heavy cream, stirring to combine.", "timer": null},
+      {"description": "Return chicken to the skillet and simmer for 5-7 minutes until sauce thickens.", "timer": 420}
+    ],
+    "image": "assets/images/Creamy Garlic Butter Chicken.png"
+  },
+  {
+    "id": "smoky_bbq_chicken_strips",
+    "title": "Smoky BBQ Chicken Strips",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 2,
+    "timeInMinutes": 30,
+    "ingredients": [
+      {"name": "Chicken breast tenders", "quantity": "1 lb"},
+      {"name": "BBQ sauce", "quantity": "½ cup"},
+      {"name": "Smoked paprika", "quantity": "1 tsp"},
+      {"name": "Onion powder", "quantity": "1 tsp"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Black pepper", "quantity": "½ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 400°F (200°C) and line a baking sheet with foil.", "timer": null},
+      {"description": "Season chicken tenders with smoked paprika, onion powder, salt, and pepper.", "timer": null},
+      {"description": "Arrange on the baking sheet and bake for 15 minutes.", "timer": 900},
+      {"description": "Remove from oven, brush with BBQ sauce, and bake an additional 5-8 minutes.", "timer": 480}
+    ],
+    "image": "assets/images/Smoky BBQ Chicken Strips.png"
+  },
+  {
+    "id": "lemon_pepper_chicken_bites",
+    "title": "Lemon Pepper Chicken Bites",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 1,
+    "spicy": 1,
+    "timeInMinutes": 20,
+    "ingredients": [
+      {"name": "Chicken breasts, cubed", "quantity": "1 lb"},
+      {"name": "Lemon juice", "quantity": "2 tbsp"},
+      {"name": "Lemon zest", "quantity": "1 tsp"},
+      {"name": "Black pepper", "quantity": "1 tsp"},
+      {"name": "Salt", "quantity": "½ tsp"},
+      {"name": "Olive oil", "quantity": "1 tbsp"}
+    ],
+    "steps": [
+      {"description": "Heat olive oil in a skillet over medium-high heat.", "timer": null},
+      {"description": "Toss chicken cubes with salt, pepper, and lemon zest.", "timer": null},
+      {"description": "Sear chicken bites for 5-6 minutes until cooked through.", "timer": 360},
+      {"description": "Add lemon juice and stir to coat chicken before serving.", "timer": null}
+    ],
+    "image": "assets/images/Lemon Pepper Chicken Bites.png"
+  },
+  {
+    "id": "savory_teriyaki_chicken",
+    "title": "Savory Teriyaki Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 25,
+    "ingredients": [
+      {"name": "Chicken thighs, boneless", "quantity": "1 lb"},
+      {"name": "Soy sauce", "quantity": "¼ cup"},
+      {"name": "Brown sugar", "quantity": "2 tbsp"},
+      {"name": "Garlic cloves, minced", "quantity": "2"},
+      {"name": "Ginger, minced", "quantity": "1 tsp"},
+      {"name": "Cornstarch", "quantity": "1 tsp"}
+    ],
+    "steps": [
+      {"description": "In a small bowl, whisk soy sauce, brown sugar, garlic, ginger, and cornstarch.", "timer": null},
+      {"description": "Cut chicken into strips. Sear in a skillet over medium-high heat for 5 minutes.", "timer": 300},
+      {"description": "Pour in teriyaki sauce mixture and simmer until chicken is cooked and sauce thickens.", "timer": 300}
+    ],
+    "image": "assets/images/Savory Teriyaki Chicken.png"
+  },
+  {
+    "id": "crispy_buttermilk_fried_chicken",
+    "title": "Crispy Buttermilk Fried Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 3,
+    "spicy": 2,
+    "timeInMinutes": 120,
+    "ingredients": [
+      {"name": "Chicken pieces (legs, thighs, breasts)", "quantity": "8"},
+      {"name": "Buttermilk", "quantity": "2 cups"},
+      {"name": "All-purpose flour", "quantity": "2 cups"},
+      {"name": "Paprika", "quantity": "2 tsp"},
+      {"name": "Salt", "quantity": "2 tsp"},
+      {"name": "Black pepper", "quantity": "1 tsp"},
+      {"name": "Vegetable oil", "quantity": "for frying"}
+    ],
+    "steps": [
+      {"description": "Marinate chicken in buttermilk for at least 1 hour or overnight.", "timer": 3600},
+      {"description": "Combine flour, paprika, salt, and pepper in a large bowl.", "timer": null},
+      {"description": "Remove chicken from buttermilk and dredge in the seasoned flour.", "timer": null},
+      {"description": "Heat oil to 350°F (175°C) and fry chicken until golden brown and cooked through.", "timer": 600}
+    ],
+    "image": "assets/images/Crispy Buttermilk Fried Chicken.png"
+  },
+  {
+    "id": "sticky_sweet_soy_chicken",
+    "title": "Sticky Sweet Soy Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 35,
+    "ingredients": [
+      {"name": "Chicken thighs, boneless", "quantity": "1 lb"},
+      {"name": "Soy sauce", "quantity": "3 tbsp"},
+      {"name": "Honey", "quantity": "2 tbsp"},
+      {"name": "Brown sugar", "quantity": "1 tbsp"},
+      {"name": "Garlic, minced", "quantity": "2 cloves"},
+      {"name": "Cornstarch", "quantity": "1 tsp"}
+    ],
+    "steps": [
+      {"description": "Cut chicken into bite-sized pieces and season with salt and pepper.", "timer": null},
+      {"description": "Sauté chicken in a skillet over medium-high heat until lightly browned.", "timer": 300},
+      {"description": "Mix soy sauce, honey, brown sugar, garlic, and cornstarch in a bowl.", "timer": null},
+      {"description": "Pour sauce over chicken and simmer until sauce is thick and chicken is fully cooked.", "timer": 300}
+    ],
+    "image": "assets/images/Sticky Sweet Soy Chicken.png"
+  },
+  {
+    "id": "roasted_garlic_and_rosemary_chicken",
+    "title": "Roasted Garlic and Rosemary Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 75,
+    "ingredients": [
+      {"name": "Chicken leg quarters", "quantity": "4"},
+      {"name": "Fresh rosemary, chopped", "quantity": "1 tbsp"},
+      {"name": "Garlic cloves, minced", "quantity": "4"},
+      {"name": "Olive oil", "quantity": "2 tbsp"},
+      {"name": "Lemon juice", "quantity": "1 tbsp"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Black pepper", "quantity": "½ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 375°F (190°C).", "timer": null},
+      {"description": "Whisk together rosemary, garlic, olive oil, lemon juice, salt, and pepper.", "timer": null},
+      {"description": "Rub mixture all over chicken and place on a baking sheet.", "timer": null},
+      {"description": "Roast for 45-50 minutes or until chicken is fully cooked.", "timer": 3000}
+    ],
+    "image": "assets/images/Roasted Garlic and Rosemary Chicken.png"
+  },
+  {
+    "id": "sizzling_szechuan_chicken",
+    "title": "Sizzling Szechuan Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 3,
+    "spicy": 4,
+    "timeInMinutes": 25,
+    "ingredients": [
+      {"name": "Chicken breast, sliced", "quantity": "1 lb"},
+      {"name": "Szechuan peppercorns, ground", "quantity": "1 tsp"},
+      {"name": "Dried red chilies", "quantity": "3-4"},
+      {"name": "Garlic, minced", "quantity": "2 cloves"},
+      {"name": "Soy sauce", "quantity": "2 tbsp"},
+      {"name": "Rice vinegar", "quantity": "1 tbsp"},
+      {"name": "Sugar", "quantity": "1 tsp"}
+    ],
+    "steps": [
+      {"description": "Toast Szechuan peppercorns in a dry skillet, then grind finely.", "timer": 60},
+      {"description": "Stir-fry sliced chicken in oil for about 3-4 minutes.", "timer": 240},
+      {"description": "Add dried chilies, garlic, peppercorns, soy sauce, vinegar, and sugar.", "timer": null},
+      {"description": "Cook for another 2-3 minutes, allowing flavors to meld.", "timer": 180}
+    ],
+    "image": "assets/images/Sizzling Szechuan Chicken.png"
+  },
+  {
+    "id": "tender_baked_chicken_breasts",
+    "title": "Tender Baked Chicken Breasts",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 1,
+    "spicy": 1,
+    "timeInMinutes": 25,
+    "ingredients": [
+      {"name": "Chicken breasts", "quantity": "2"},
+      {"name": "Olive oil", "quantity": "1 tbsp"},
+      {"name": "Paprika", "quantity": "1 tsp"},
+      {"name": "Garlic powder", "quantity": "1 tsp"},
+      {"name": "Salt", "quantity": "½ tsp"},
+      {"name": "Black pepper", "quantity": "¼ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 400°F (200°C).", "timer": null},
+      {"description": "Coat chicken with olive oil. Combine paprika, garlic powder, salt, and pepper.", "timer": null},
+      {"description": "Rub seasoning onto chicken and place on a baking sheet.", "timer": null},
+      {"description": "Bake for 20-22 minutes or until cooked through.", "timer": 1320}
+    ],
+    "image": "assets/images/Tender Baked Chicken Breasts.png"
+  },
+  {
+    "id": "honey_mustard_chicken_delight",
+    "title": "Honey Mustard Chicken Delight",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 40,
+    "ingredients": [
+      {"name": "Chicken thighs", "quantity": "4"},
+      {"name": "Honey", "quantity": "2 tbsp"},
+      {"name": "Dijon mustard", "quantity": "2 tbsp"},
+      {"name": "Garlic powder", "quantity": "1 tsp"},
+      {"name": "Onion powder", "quantity": "1 tsp"},
+      {"name": "Salt and pepper", "quantity": "to taste"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 375°F (190°C). Grease a baking dish.", "timer": null},
+      {"description": "In a bowl, mix honey, Dijon mustard, garlic powder, and onion powder.", "timer": null},
+      {"description": "Place chicken in baking dish, season with salt and pepper, then coat with sauce.", "timer": null},
+      {"description": "Bake for about 35 minutes, or until chicken is fully cooked.", "timer": 2100}
+    ],
+    "image": "assets/images/Honey Mustard Chicken Delight.png"
+  },
+  {
+    "id": "fiery_buffalo_chicken_drumsticks",
+    "title": "Fiery Buffalo Chicken Drumsticks",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 3,
+    "spicy": 5,
+    "timeInMinutes": 50,
+    "ingredients": [
+      {"name": "Chicken drumsticks", "quantity": "8"},
+      {"name": "Hot sauce", "quantity": "½ cup"},
+      {"name": "Butter, melted", "quantity": "3 tbsp"},
+      {"name": "Garlic powder", "quantity": "1 tsp"},
+      {"name": "Paprika", "quantity": "1 tsp"},
+      {"name": "Salt and pepper", "quantity": "to taste"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 400°F (200°C).", "timer": null},
+      {"description": "Season drumsticks with salt, pepper, paprika, and garlic powder.", "timer": null},
+      {"description": "Bake for 30 minutes, flipping halfway.", "timer": 1800},
+      {"description": "Mix melted butter with hot sauce.", "timer": null},
+      {"description": "Brush sauce on drumsticks and bake another 10 minutes.", "timer": 600}
+    ],
+    "image": "assets/images/Fiery Buffalo Chicken Drumsticks.png"
+  },
+  {
+    "id": "cheesy_chicken_alfredo",
+    "title": "Cheesy Chicken Alfredo",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 25,
+    "ingredients": [
+      {"name": "Chicken breast, sliced", "quantity": "1 lb"},
+      {"name": "Fettuccine pasta", "quantity": "8 oz"},
+      {"name": "Butter", "quantity": "2 tbsp"},
+      {"name": "Heavy cream", "quantity": "1 cup"},
+      {"name": "Parmesan cheese, grated", "quantity": "¾ cup"},
+      {"name": "Garlic powder", "quantity": "1 tsp"},
+      {"name": "Salt and pepper", "quantity": "to taste"}
+    ],
+    "steps": [
+      {"description": "Cook fettuccine according to package instructions.", "timer": null},
+      {"description": "Sauté sliced chicken in butter until cooked.", "timer": 300},
+      {"description": "Add cream, Parmesan, garlic powder, salt, and pepper to create Alfredo sauce.", "timer": null},
+      {"description": "Combine sauce with drained pasta and serve.", "timer": null}
+    ],
+    "image": "assets/images/Cheesy Chicken Alfredo.png"
+  },
+  {
+    "id": "crunchy_panko_chicken_tenders",
+    "title": "Crunchy Panko Chicken Tenders",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 30,
+    "ingredients": [
+      {"name": "Chicken tenders", "quantity": "1 lb"},
+      {"name": "Flour", "quantity": "½ cup"},
+      {"name": "Eggs, beaten", "quantity": "2"},
+      {"name": "Panko breadcrumbs", "quantity": "1 cup"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Black pepper", "quantity": "½ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 400°F (200°C). Line a baking sheet with parchment paper.", "timer": null},
+      {"description": "Season flour with salt and pepper.", "timer": null},
+      {"description": "Dredge chicken in flour, dip in egg, then coat in panko.", "timer": null},
+      {"description": "Place on the baking sheet and bake for 15-18 minutes until golden.", "timer": 1080}
+    ],
+    "image": "assets/images/Crunchy Panko Chicken Tenders.png"
+  },
+  {
+    "id": "zesty_cajun_chicken",
+    "title": "Zesty Cajun Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 3,
+    "timeInMinutes": 20,
+    "ingredients": [
+      {"name": "Chicken breasts, sliced", "quantity": "1 lb"},
+      {"name": "Cajun seasoning", "quantity": "1 tbsp"},
+      {"name": "Olive oil", "quantity": "1 tbsp"},
+      {"name": "Salt", "quantity": "½ tsp"}
+    ],
+    "steps": [
+      {"description": "Toss chicken with olive oil, Cajun seasoning, and salt.", "timer": null},
+      {"description": "Heat a skillet over medium-high heat and sauté chicken for 5-6 minutes.", "timer": 360},
+      {"description": "Cook until chicken is done and edges are slightly crisp.", "timer": null}
+    ],
+    "image": "assets/images/Zesty Cajun Chicken.png"
+  },
+  {
+    "id": "sun_dried_tomato_basil_chicken",
+    "title": "Sun-Dried Tomato Basil Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 3,
+    "spicy": 1,
+    "timeInMinutes": 30,
+    "ingredients": [
+      {"name": "Chicken breasts", "quantity": "2"},
+      {"name": "Sun-dried tomatoes, chopped", "quantity": "¼ cup"},
+      {"name": "Fresh basil, chopped", "quantity": "2 tbsp"},
+      {"name": "Garlic, minced", "quantity": "2 cloves"},
+      {"name": "Heavy cream", "quantity": "½ cup"},
+      {"name": "Olive oil", "quantity": "1 tbsp"},
+      {"name": "Salt and pepper", "quantity": "to taste"}
+    ],
+    "steps": [
+      {"description": "Season chicken with salt and pepper. Sear in olive oil for 4-5 minutes per side.", "timer": 540},
+      {"description": "Add garlic and sun-dried tomatoes; cook for 1 minute.", "timer": 60},
+      {"description": "Stir in heavy cream and basil, simmer for 3-4 minutes.", "timer": 240},
+      {"description": "Return chicken to the sauce and coat evenly.", "timer": null}
+    ],
+    "image": "assets/images/Sun-Dried Tomato Basil Chicken.png"
+  },
+  {
+    "id": "classic_chicken_and_rice_casserole",
+    "title": "Classic Chicken and Rice Casserole",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 60,
+    "ingredients": [
+      {"name": "Chicken breasts, cubed", "quantity": "2"},
+      {"name": "White rice", "quantity": "1 cup"},
+      {"name": "Chicken broth", "quantity": "2 cups"},
+      {"name": "Cream of mushroom soup", "quantity": "1 can"},
+      {"name": "Onion, chopped", "quantity": "½"},
+      {"name": "Salt and pepper", "quantity": "to taste"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 375°F (190°C). Grease a casserole dish.", "timer": null},
+      {"description": "Combine rice, chicken broth, soup, onion, salt, and pepper in the dish.", "timer": null},
+      {"description": "Add cubed chicken on top and cover with foil.", "timer": null},
+      {"description": "Bake for 45-50 minutes or until rice is tender and chicken is cooked.", "timer": 3000}
+    ],
+    "image": "assets/images/Classic Chicken and Rice Casserole.png"
+  },
+  {
+    "id": "maple_dijon_glazed_chicken",
+    "title": "Maple Dijon Glazed Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 40,
+    "ingredients": [
+      {"name": "Chicken breasts", "quantity": "2"},
+      {"name": "Maple syrup", "quantity": "2 tbsp"},
+      {"name": "Dijon mustard", "quantity": "2 tbsp"},
+      {"name": "Apple cider vinegar", "quantity": "1 tsp"},
+      {"name": "Salt", "quantity": "½ tsp"},
+      {"name": "Black pepper", "quantity": "¼ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 375°F (190°C). Line a baking sheet with foil.", "timer": null},
+      {"description": "Mix maple syrup, Dijon mustard, vinegar, salt, and pepper in a small bowl.", "timer": null},
+      {"description": "Place chicken on the sheet and brush with half the glaze.", "timer": null},
+      {"description": "Bake for 20 minutes, brush with remaining glaze, then bake 5-10 more minutes.", "timer": 1500}
+    ],
+    "image": "assets/images/Maple Dijon Glazed Chicken.png"
+  },
+  {
+    "id": "butter_chicken_bliss",
+    "title": "Butter Chicken Bliss",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 3,
+    "spicy": 3,
+    "timeInMinutes": 35,
+    "ingredients": [
+      {"name": "Chicken breast, cubed", "quantity": "1 lb"},
+      {"name": "Onion, diced", "quantity": "1"},
+      {"name": "Tomato sauce", "quantity": "1 cup"},
+      {"name": "Heavy cream", "quantity": "½ cup"},
+      {"name": "Garam masala", "quantity": "1 tsp"},
+      {"name": "Ginger, minced", "quantity": "1 tsp"},
+      {"name": "Garlic, minced", "quantity": "2 cloves"},
+      {"name": "Butter", "quantity": "2 tbsp"}
+    ],
+    "steps": [
+      {"description": "Melt butter in a pan over medium heat; sauté onion, garlic, and ginger.", "timer": 180},
+      {"description": "Add chicken and garam masala; cook until chicken is browned.", "timer": 300},
+      {"description": "Pour in tomato sauce and simmer for 5-7 minutes.", "timer": 420},
+      {"description": "Stir in heavy cream; simmer briefly until sauce is velvety.", "timer": 180}
+    ],
+    "image": "assets/images/Butter Chicken Bliss.png"
+  },
+  {
+    "id": "slow_cooked_lemon_thyme_chicken",
+    "title": "Slow-Cooked Lemon Thyme Chicken",
+    "category": "normal",
+    "isLocked": false,
+    "requiredCountToUnlock": 0,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 2,
+    "spicy": 1,
+    "timeInMinutes": 240,
+    "ingredients": [
+      {"name": "Chicken thighs", "quantity": "6"},
+      {"name": "Chicken broth", "quantity": "1 cup"},
+      {"name": "Lemon juice", "quantity": "2 tbsp"},
+      {"name": "Thyme, fresh", "quantity": "1 tbsp"},
+      {"name": "Garlic cloves, minced", "quantity": "2"},
+      {"name": "Salt and pepper", "quantity": "to taste"}
+    ],
+    "steps": [
+      {"description": "Season chicken with salt and pepper. Place in a slow cooker.", "timer": null},
+      {"description": "Add chicken broth, lemon juice, thyme, and garlic.", "timer": null},
+      {"description": "Cook on low for 4-5 hours or until chicken is tender.", "timer": 14400}
+    ],
+    "image": "assets/images/Slow-Cooked Lemon Thyme Chicken.png"
+  },
+  {
+    "id": "smokin_cluck_supreme",
+    "title": "Smokin’ Cluck Supreme",
+    "category": "cluckmazing",
+    "isLocked": true,
+    "requiredCountToUnlock": 8,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 4,
+    "spicy": 4,
+    "timeInMinutes": 70,
+    "ingredients": [
+      {"name": "Whole chicken", "quantity": "1"},
+      {"name": "Smoked paprika", "quantity": "2 tsp"},
+      {"name": "Chili powder", "quantity": "1 tsp"},
+      {"name": "Brown sugar", "quantity": "1 tbsp"},
+      {"name": "Garlic powder", "quantity": "1 tsp"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Black pepper", "quantity": "½ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat the grill or smoker to about 350°F (175°C).", "timer": null},
+      {"description": "Mix smoked paprika, chili powder, brown sugar, garlic powder, salt, and pepper.", "timer": null},
+      {"description": "Rub the seasoning mix all over the chicken.", "timer": null},
+      {"description": "Place chicken on the grill/smoker and cook for 60-70 minutes or until internal temp reaches 165°F (74°C).", "timer": 4200}
+    ],
+    "image": "assets/images/Smokin’ Cluck Supreme.png"
+  },
+  {
+    "id": "celestial_firebird",
+    "title": "Celestial Firebird",
+    "category": "cluckmazing",
+    "isLocked": true,
+    "requiredCountToUnlock": 12,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 5,
+    "spicy": 5,
+    "timeInMinutes": 90,
+    "ingredients": [
+      {"name": "Whole chicken", "quantity": "1"},
+      {"name": "Hot chili paste", "quantity": "3 tbsp"},
+      {"name": "Soy sauce", "quantity": "2 tbsp"},
+      {"name": "Honey", "quantity": "2 tbsp"},
+      {"name": "Ginger, minced", "quantity": "1 tbsp"},
+      {"name": "Garlic, minced", "quantity": "2 cloves"},
+      {"name": "Lime juice", "quantity": "1 tbsp"}
+    ],
+    "steps": [
+      {"description": "Combine chili paste, soy sauce, honey, ginger, garlic, and lime juice.", "timer": null},
+      {"description": "Marinate chicken for at least 1 hour in the mixture.", "timer": 3600},
+      {"description": "Roast at 375°F (190°C) for 60-70 minutes, basting occasionally.", "timer": 4200},
+      {"description": "Finish under broiler for a few minutes to crisp the skin.", "timer": 180}
+    ],
+    "image": "assets/images/Celestial Firebird.png"
+  },
+  {
+    "id": "chickstounding_inferno",
+    "title": "Chickstounding Inferno",
+    "category": "cluckmazing",
+    "isLocked": true,
+    "requiredCountToUnlock": 16,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 5,
+    "spicy": 5,
+    "timeInMinutes": 75,
+    "ingredients": [
+      {"name": "Chicken thighs and wings", "quantity": "2 lbs"},
+      {"name": "Extreme hot sauce", "quantity": "½ cup"},
+      {"name": "Brown sugar", "quantity": "2 tbsp"},
+      {"name": "Garlic cloves, minced", "quantity": "3"},
+      {"name": "Apple cider vinegar", "quantity": "1 tbsp"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Smoked paprika", "quantity": "1 tsp"}
+    ],
+    "steps": [
+      {"description": "Mix hot sauce, brown sugar, garlic, vinegar, salt, and paprika in a bowl.", "timer": null},
+      {"description": "Marinate chicken for 30 minutes to 1 hour.", "timer": 1800},
+      {"description": "Grill or bake at 400°F (200°C) for 30-35 minutes, turning occasionally.", "timer": 2100},
+      {"description": "Brush with remaining sauce and cook 5 more minutes.", "timer": 300}
+    ],
+    "image": "assets/images/Chickstounding Inferno.png"
+  },
+  {
+    "id": "epic_cluckstorm",
+    "title": "Epic Cluckstorm",
+    "category": "cluckmazing",
+    "isLocked": true,
+    "requiredCountToUnlock": 20,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 5,
+    "spicy": 5,
+    "timeInMinutes": 60,
+    "ingredients": [
+      {"name": "Chicken legs", "quantity": "6"},
+      {"name": "Chili oil", "quantity": "2 tbsp"},
+      {"name": "Ground cayenne pepper", "quantity": "1 tsp"},
+      {"name": "Brown sugar", "quantity": "1 tsp"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Chili flakes", "quantity": "1 tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat oven to 425°F (220°C).", "timer": null},
+      {"description": "Rub chicken legs with chili oil, cayenne, sugar, salt, and chili flakes.", "timer": null},
+      {"description": "Roast for 35-40 minutes, until cooked through.", "timer": 2400},
+      {"description": "Increase heat to broil for 2-3 minutes for extra crispness.", "timer": 180}
+    ],
+    "image": "assets/images/Epic Cluckstorm.png"
+  },
+  {
+    "id": "majestic_phoenix_feast",
+    "title": "Majestic Phoenix Feast",
+    "category": "cluckmazing",
+    "isLocked": true,
+    "requiredCountToUnlock": 24,
+    "isCompleted": false,
+    "isFavorite": false,
+    "difficulty": 5,
+    "spicy": 5,
+    "timeInMinutes": 120,
+    "ingredients": [
+      {"name": "Whole chicken", "quantity": "1"},
+      {"name": "Extra hot chili rub", "quantity": "2 tbsp"},
+      {"name": "Honey", "quantity": "2 tbsp"},
+      {"name": "Garlic powder", "quantity": "1 tsp"},
+      {"name": "Salt", "quantity": "1 tsp"},
+      {"name": "Black pepper", "quantity": "½ tsp"}
+    ],
+    "steps": [
+      {"description": "Preheat smoker or oven to 350°F (175°C).", "timer": null},
+      {"description": "Mix chili rub, honey, garlic powder, salt, and pepper into a paste.", "timer": null},
+      {"description": "Coat chicken thoroughly with the paste.", "timer": null},
+      {"description": "Cook for 90-100 minutes or until internal temperature reaches 165°F (74°C).", "timer": 5400}
+    ],
+    "image": "assets/images/Majestic Phoenix Feast.png"
+  }
+]
