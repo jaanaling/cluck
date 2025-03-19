@@ -47,6 +47,98 @@ class ShopScreen extends StatelessWidget {
                               return Row(
                                 children: [
                                   AppButton(
+                                    borderRadius: 22,
+                                    color: ButtonColors.white,
+                                    elevation: 1,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 13,
+                                        horizontal: 10,
+                                      ),
+                                      child: SizedBox(
+                                        width: getWidth(context, percent: 1) - 110,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 9,
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width:
+                                                getWidth(context, percent: 1) -
+                                                    283,
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  alignment: Alignment.centerLeft,
+
+                                                  child: Text(
+                                                    item
+                                                        .name,
+                                                    style: TextStyle(
+                                                      color: Color(0xFF66A14A),
+                                                      fontSize: 22,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Spacer(),
+                                              DecoratedBox(
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(
+                                                    12,
+                                                  ),
+                                                  border: Border.all(
+                                                    color: Color(0xFFFDC662),
+                                                    width: 2,
+                                                  ),
+                                                ),
+                                                child: SizedBox(
+                                                  width: 71,
+                                                  height: 52,
+                                                  child: Padding(
+                                                    padding:
+                                                    const EdgeInsets.symmetric(
+                                                      horizontal: 7,
+                                                    ),
+                                                    child: Center(
+                                                      child: FittedBox(
+                                                        fit: BoxFit.scaleDown,
+                                                        child: Text(
+                                                          item
+                                                              .quantity,
+                                                          style: TextStyle(
+                                                            color: Color(0xFFFDC662),
+                                                            fontSize: 23,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Gap(10),
+                                              AppButton(
+                                                color: ButtonColors.yellow,
+                                                borderRadius: 12,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(10),
+                                                  child: AppIcon(
+                                                    asset:
+                                                    IconProvider.shop
+                                                        .buildImageUrl(),
+                                                    width: 32,
+                                                    height: 32,
+                                                  ),
+                                                ),
+                                                onPressed: () => removeItem(item, context),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  AppButton(
                                     color: ButtonColors.yellow,
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(

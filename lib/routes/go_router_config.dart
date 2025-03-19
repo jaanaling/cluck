@@ -41,15 +41,31 @@ GoRouter buildGoRouter = GoRouter(
                   GoRoute(
                     path: RouteValue.recipe.path,
                     builder: (BuildContext context, GoRouterState state) {
-                      return RecipeScreen(
-                        recipe: state .extra as Recipe,
+                      return DecoratedBox(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [Color(0xFF70AD50), Color(0xFF89C96D)],
+                          ),
+                        ),
+                        child: RecipeScreen(
+                          recipe: state .extra as Recipe,
+                        ),
                       );
                     },
                   ),
                   GoRoute(
                     path: RouteValue.shop.path,
                     builder: (BuildContext context, GoRouterState state) {
-                      return const ShopScreen();
+                      return DecoratedBox(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Color(0xFF70AD50), Color(0xFF89C96D)],
+                            ),
+                          ),child: ShopScreen());
                     },
                   ),
                 ]),

@@ -7,6 +7,8 @@ class AppButton extends StatelessWidget {
   final Widget child;
   final Size? fixedSize;
   final List<Color>? gradientColors;
+  final double elevation;
+  final double? borderRadius;
   const AppButton({
     super.key,
     required this.color,
@@ -14,36 +16,61 @@ class AppButton extends StatelessWidget {
     required this.child,
     this.fixedSize,
     this.gradientColors,
+    this.elevation = 0,
+    this.borderRadius,
   });
 
   @override
   Widget build(BuildContext context) {
     return gradientColors == null
-        ? ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: color.color,
-            elevation: 0,
-            padding: EdgeInsets.zero,
-            fixedSize: fixedSize,
-            textStyle: TextStyle(fontFamily: 'mexe'),
-            overlayColor: Color(0xFF4B0000),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(32),
-            ),
+        ? DecoratedBox(
+          decoration: BoxDecoration(
+            boxShadow:
+                elevation != 0
+                    ? [
+                      BoxShadow(
+                        color: Colors.black26.withOpacity(0.1),
+                        offset: Offset(0, 4),
+                        blurRadius: 2.0,
+                      ),
+                    ]
+                    : null,
+            borderRadius: BorderRadius.circular(borderRadius ?? 32),
           ),
-          onPressed: onPressed,
-          child: child,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: color.color,
+              elevation: 0,
+              padding: EdgeInsets.zero,
+              fixedSize: fixedSize,
+              disabledBackgroundColor: color.color,
+              textStyle: TextStyle(fontFamily: 'mexe'),
+              overlayColor: Color(0xFF4B0000),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius ?? 32),
+              ),
+            ),
+            onPressed: onPressed,
+            child: child,
+          ),
         )
         : Container(
           width: fixedSize?.width,
           height: fixedSize?.height,
           decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26.withOpacity(0.1),
+                offset: Offset(0, 4),
+                blurRadius: 2.0,
+              ),
+            ],
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: gradientColors!,
             ),
-            borderRadius: BorderRadius.circular(32),
+            borderRadius: BorderRadius.circular(borderRadius ?? 32),
           ),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -55,7 +82,7 @@ class AppButton extends StatelessWidget {
               textStyle: TextStyle(fontFamily: 'mexe'),
               overlayColor: Color(0xFF4B0000),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32),
+                borderRadius: BorderRadius.circular(borderRadius ?? 32),
               ),
             ),
             onPressed: onPressed,

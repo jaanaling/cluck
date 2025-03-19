@@ -17,35 +17,45 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: 10,
-        right: 10,
-        top: MediaQuery.of(context).padding.top +10,
-        bottom: 12
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: Color(0xFF97c480),
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.black26.withOpacity(0.08), offset: Offset(0, 4), blurRadius: 8.0)
+        ],
       ),
-      child: Row(
-        children: [
-          if (hasBackButton)
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(32),
-                  onTap: () {
-                    context.pop();
-                  },
-                  child: AppIcon(
-                    asset: IconProvider.back.buildImageUrl(),
-                    width: 52,
-                    height: 52,
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 10,
+          right: 10,
+          top: MediaQuery.of(context).padding.top + 10,
+          bottom: 12,
+        ),
+        child: Row(
+          children: [
+            if (hasBackButton)
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(32),
+                    onTap: () {
+                      context.pop();
+                    },
+                    child: AppIcon(
+                      asset: IconProvider.back.buildImageUrl(),
+                      width: 52,
+                      height: 52,
+                    ),
                   ),
                 ),
               ),
-            ),
-          widgets,
-        ],
+            widgets,
+          ],
+        ),
       ),
     );
   }

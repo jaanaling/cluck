@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 void showCupertinoSnackBar(BuildContext context, String massage) {
   final overlay = Overlay.of(context);
   final overlayEntry = OverlayEntry(
-    builder: (context) => Positioned(
-      bottom: 100.0,
-      left: MediaQuery.of(context).size.width * 0.1,
-      child: _CupertinoSnackBar(
-        message: massage,
-        duration: const Duration(milliseconds: 3500),
-      ),
-    ),
+    builder:
+        (context) => Positioned(
+          bottom: 100.0,
+          left: MediaQuery.of(context).size.width * 0.1,
+          child: _CupertinoSnackBar(
+            message: massage,
+            duration: const Duration(milliseconds: 3500),
+          ),
+        ),
   );
 
   overlay.insert(overlayEntry);
@@ -25,10 +26,7 @@ class _CupertinoSnackBar extends StatelessWidget {
   final String message;
   final Duration duration;
 
-  const _CupertinoSnackBar({
-    required this.message,
-    required this.duration,
-  });
+  const _CupertinoSnackBar({required this.message, required this.duration});
 
   @override
   Widget build(BuildContext context) {
@@ -38,20 +36,19 @@ class _CupertinoSnackBar extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.8,
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
         decoration: BoxDecoration(
-          color: Colors.pink.withOpacity(0.9),
+          color: Color(0xFF133E04),
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Text(
           message,
           style: TextStyle(
-            fontFamily: 'Poetsen',
             fontWeight: FontWeight.w700,
             fontSize: 16,
-            color: Colors.white,
+            color: Color(0xFFFFFFFF),
             shadows: [
               Shadow(
                 offset: Offset(2.0, 2.0), // Смещение тени
-                color: Color(0x80000000), // Цвет тени с прозрачностью
+                color: Color(0x2A000000), // Цвет тени с прозрачностью
                 blurRadius: 4,
               ),
             ],
