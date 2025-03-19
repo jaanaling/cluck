@@ -1,5 +1,5 @@
-
 import 'package:cluckmazing_recipe/src/core/utils/json_loader.dart';
+import 'package:cluckmazing_recipe/src/main/model/history.dart';
 import 'package:cluckmazing_recipe/src/main/model/recipe.dart';
 
 /// Репозиторий для советов.
@@ -14,7 +14,7 @@ class RecipeRepository {
     );
   }
 
-  Future<void> update(Recipe updated) async {
+  Future<void> update(Recipe updated) {
     return JsonLoader.modifyDataList<Recipe>(
       key,
       updated,
@@ -26,6 +26,23 @@ class RecipeRepository {
           itemList[index] = updated;
         }
       },
+    );
+  }
+
+  Future<List<History>> loadHistory() {
+    return JsonLoader.loadData<History>(
+      "history",
+      'assets/json/history.json',
+      (json) => History.fromMap(json),
+    );
+  }
+
+  Future<void> saveHistory(History item) {
+    return JsonLoader.saveData<History>(
+      "history",
+      item,
+      () async => await loadHistory(),
+      (item) => item.toMap(),
     );
   }
 

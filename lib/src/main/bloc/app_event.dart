@@ -33,4 +33,12 @@ class RemoveShoppingItemEvent extends AppEvent {
   List<Object?> get props => [item];
 }
 
+class SaveHistoryItemEvent extends AppEvent {
+  final ShoppingList item;
+  const SaveHistoryItemEvent(this.item);
+
+  @override
+  List<Object?> get props => [item];
+}
+
 class RemoveAllShoppingItemsEvent extends AppEvent {}

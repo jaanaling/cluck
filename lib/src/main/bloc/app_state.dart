@@ -12,14 +12,17 @@ class AppLoading extends AppState {}
 class AppLoaded extends AppState {
   final List<Recipe> recipes;
   final List<ShoppingList> shoppingList;
+  final List<History> history ;
+  
 
   const AppLoaded({
     required this.recipes,
+    required this.history,
     required this.shoppingList,
   });
 
   @override
-  List<Object?> get props => [recipes, shoppingList];
+  List<Object?> get props => [recipes, shoppingList, history];
 }
 
 class AppError extends AppState {

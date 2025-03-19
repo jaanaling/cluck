@@ -23,6 +23,10 @@ class ShopScreen extends StatelessWidget {
     context.read<AppBloc>().add(RemoveAllShoppingItemsEvent());
   }
 
+  void buyItem(ShoppingList item, BuildContext context) {
+    context.read<AppBloc>().add(SaveHistoryItemEvent(item));
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(
@@ -32,10 +36,18 @@ class ShopScreen extends StatelessWidget {
         return Stack(
           children: [
             SingleChildScrollView(
-              padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top+  110, bottom: MediaQuery.of(context).padding.bottom + 96,),
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).padding.top + 110,
+                bottom: MediaQuery.of(context).padding.bottom + 96,
+              ),
               child:
                   state.shoppingList.length == 0
-                      ? Center(child: Text('Shopping list is empty', style: TextStyle(fontSize: 22, color: Colors.white),))
+                      ? Center(
+                        child: Text(
+                          'Shopping list is empty',
+                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        ),
+                      )
                       : Column(
                         children: [
                           ListView.separated(
@@ -65,15 +77,14 @@ class ShopScreen extends StatelessWidget {
                                         children: [
                                           SizedBox(
                                             width:
-                                            getWidth(context, percent: 1) -
+                                                getWidth(context, percent: 1) -
                                                 283,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
                                               alignment: Alignment.centerLeft,
 
                                               child: Text(
-                                                item
-                                                    .name,
+                                                item.name,
                                                 style: TextStyle(
                                                   color: Color(0xFF66A14A),
                                                   fontSize: 22,
@@ -84,9 +95,8 @@ class ShopScreen extends StatelessWidget {
                                           Spacer(),
                                           DecoratedBox(
                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(
-                                                12,
-                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               border: Border.all(
                                                 color: Color(0xFFFDC662),
                                                 width: 2,
@@ -97,17 +107,18 @@ class ShopScreen extends StatelessWidget {
                                               height: 52,
                                               child: Padding(
                                                 padding:
-                                                const EdgeInsets.symmetric(
-                                                  horizontal: 7,
-                                                ),
+                                                    const EdgeInsets.symmetric(
+                                                      horizontal: 7,
+                                                    ),
                                                 child: Center(
                                                   child: FittedBox(
                                                     fit: BoxFit.scaleDown,
                                                     child: Text(
-                                                      item
-                                                          .quantity,
+                                                      item.quantity,
                                                       style: TextStyle(
-                                                        color: Color(0xFFFDC662),
+                                                        color: Color(
+                                                          0xFFFDC662,
+                                                        ),
                                                         fontSize: 23,
                                                       ),
                                                     ),
@@ -124,23 +135,26 @@ class ShopScreen extends StatelessWidget {
                                               padding: const EdgeInsets.all(10),
                                               child: AppIcon(
                                                 asset:
-                                                IconProvider.shop
-                                                    .buildImageUrl(),
+                                                    IconProvider.shop
+                                                        .buildImageUrl(),
                                                 width: 32,
                                                 height: 32,
                                               ),
                                             ),
-                                            onPressed: () => removeItem(item, context),
+                                            onPressed:
+                                                () => buyItem(item, context),
                                           ),
                                           const Gap(11),
                                           AnimatedButton(
                                             child: AppIcon(
                                               asset:
-                                              IconProvider.delete.buildImageUrl(),
+                                                  IconProvider.delete
+                                                      .buildImageUrl(),
                                               width: 33,
                                               height: 33,
                                             ),
-                                            onPressed: () => removeItem(item, context),
+                                            onPressed:
+                                                () => removeItem(item, context),
                                           ),
                                         ],
                                       ),
@@ -154,7 +168,10 @@ class ShopScreen extends StatelessWidget {
                       ),
             ),
             const AppBarWidget(
-              widgets: Text('Shopping List', style: TextStyle(color: Colors.white, fontSize: 32),),
+              widgets: Text(
+                'Shopping List',
+                style: TextStyle(color: Colors.white, fontSize: 32),
+              ),
               hasBackButton: true,
             ),
             Positioned(
@@ -162,7 +179,7 @@ class ShopScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
-                  width: getWidth(context, percent: 1)-16,
+                  width: getWidth(context, percent: 1) - 16,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
