@@ -112,12 +112,11 @@ class Recipe {
     required this.category,
     this.isLocked = false,
     required this.requiredCountToUnlock,
-    this.spicy = 0,
-    this.timeInMinutes = 0,
-
     this.isCompleted = false,
     this.isFavorite = false,
     this.difficulty = 1,
+    this.spicy = 0,
+    this.timeInMinutes = 0,
     required this.ingredients,
     required this.steps,
     required this.image,
@@ -129,12 +128,11 @@ class Recipe {
     RecipeCategory? category,
     bool? isLocked,
     int? requiredCountToUnlock,
-    int? spicy,
-    int? timeInMinutes,
-
     bool? isCompleted,
     bool? isFavorite,
     int? difficulty,
+    int? spicy,
+    int? timeInMinutes,
     List<Ingredient>? ingredients,
     List<RecipeStep>? steps,
     String? image,
@@ -143,15 +141,14 @@ class Recipe {
       id: id ?? this.id,
       title: title ?? this.title,
       category: category ?? this.category,
-      spicy: spicy ?? this.spicy,
-      timeInMinutes: timeInMinutes ?? this.timeInMinutes,
-
       isLocked: isLocked ?? this.isLocked,
       requiredCountToUnlock:
           requiredCountToUnlock ?? this.requiredCountToUnlock,
       isCompleted: isCompleted ?? this.isCompleted,
       isFavorite: isFavorite ?? this.isFavorite,
       difficulty: difficulty ?? this.difficulty,
+      spicy: spicy ?? this.spicy,
+      timeInMinutes: timeInMinutes ?? this.timeInMinutes,
       ingredients: ingredients ?? this.ingredients,
       steps: steps ?? this.steps,
       image: image ?? this.image,
@@ -168,6 +165,8 @@ class Recipe {
       'isCompleted': isCompleted,
       'isFavorite': isFavorite,
       'difficulty': difficulty,
+      'spicy': spicy,
+      'timeInMinutes': timeInMinutes,
       'ingredients': ingredients.map((x) => x.toMap()).toList(),
       'steps': steps.map((x) => x.toMap()).toList(),
       'image': image,
@@ -186,7 +185,8 @@ class Recipe {
       isCompleted: map['isCompleted'] as bool,
       isFavorite: map['isFavorite'] as bool,
       difficulty: map['difficulty'] as int,
-      image: map['image'] as String,
+      spicy: map['spicy'] as int,
+      timeInMinutes: map['timeInMinutes'] as int,
       ingredients: List<Ingredient>.from(
         (map['ingredients'] as List<dynamic>).map<Ingredient>(
           (x) => Ingredient.fromMap(x as Map<String, dynamic>),
@@ -197,6 +197,7 @@ class Recipe {
           (x) => RecipeStep.fromMap(x as Map<String, dynamic>),
         ),
       ),
+      image: map['image'] as String,
     );
   }
 
@@ -207,7 +208,7 @@ class Recipe {
 
   @override
   String toString() {
-    return 'Recipe(id: $id, title: $title, category: $category, isLocked: $isLocked, requiredCountToUnlock: $requiredCountToUnlock, isCompleted: $isCompleted, isFavorite: $isFavorite, difficulty: $difficulty, ingredients: $ingredients, steps: $steps)';
+    return 'Recipe(id: $id, title: $title, category: $category, isLocked: $isLocked, requiredCountToUnlock: $requiredCountToUnlock, isCompleted: $isCompleted, isFavorite: $isFavorite, difficulty: $difficulty, spicy: $spicy, timeInMinutes: $timeInMinutes, ingredients: $ingredients, steps: $steps, image: $image)';
   }
 
   @override
@@ -222,9 +223,11 @@ class Recipe {
         other.isCompleted == isCompleted &&
         other.isFavorite == isFavorite &&
         other.difficulty == difficulty &&
-        other.image == image &&
+        other.spicy == spicy &&
+        other.timeInMinutes == timeInMinutes &&
         listEquals(other.ingredients, ingredients) &&
-        listEquals(other.steps, steps);
+        listEquals(other.steps, steps) &&
+        other.image == image;
   }
 
   @override
@@ -237,7 +240,10 @@ class Recipe {
         isCompleted.hashCode ^
         isFavorite.hashCode ^
         difficulty.hashCode ^
+        spicy.hashCode ^
+        timeInMinutes.hashCode ^
         ingredients.hashCode ^
-        steps.hashCode;
+        steps.hashCode ^
+        image.hashCode;
   }
 }
