@@ -4,7 +4,7 @@ enum IconProvider {
   clRes(imageName: 'cl_res.png'),
   close(imageName: 'close.png'),
   closeRes(imageName: 'close_res.png'),
-  delete(imageName: 'delete.png'),
+  delete(imageName: 'delete.svg'),
   difficulty(imageName: 'difficulty.png'),
   favRes(imageName: 'fav_res.png'),
   filter(imageName: 'filter.svg'),
