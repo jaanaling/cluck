@@ -19,13 +19,13 @@ class AppRoot extends StatelessWidget {
 
           textTheme: CupertinoTextThemeData(
             textStyle: TextStyle(
-              color: Colors.white,
-              fontSize: 29,
-              fontFamily: 'Font',
-              fontWeight: FontWeight.w500,
+              color: Color(0xFF4B0000),
+              fontSize: 17,
+              fontFamily: 'mexe',
             ),
           ),
         ),
+        color: Color(0xFF4B0000),
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

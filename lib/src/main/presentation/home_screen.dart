@@ -1,13 +1,16 @@
 import 'dart:io';
 
 import 'package:cluckmazing_recipe/routes/route_value.dart';
+import 'package:cluckmazing_recipe/src/core/utils/animated_button.dart';
 import 'package:cluckmazing_recipe/src/core/utils/app_icon.dart';
+import 'package:cluckmazing_recipe/src/core/utils/cupertino_snack_bar.dart';
 import 'package:cluckmazing_recipe/src/core/utils/icon_provider.dart';
 import 'package:cluckmazing_recipe/src/core/utils/size_utils.dart';
 import 'package:cluckmazing_recipe/src/core/utils/text_with_border.dart';
 import 'package:cluckmazing_recipe/src/main/bloc/app_bloc.dart';
 import 'package:cluckmazing_recipe/src/main/model/recipe.dart';
 import 'package:cluckmazing_recipe/ui_kit/app_bar.dart';
+import 'package:cluckmazing_recipe/ui_kit/app_button.dart';
 import 'package:cluckmazing_recipe/ui_kit/gradient_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -245,113 +248,164 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget buildCategoryButtons() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Stack(
+      alignment: Alignment.bottomCenter,
       children: [
-        _buildCategoryButton(
-          icon: IconProvider.ordRes.buildImageUrl(),
-          label: 'Ordinary\nrecipes',
-          isActive: currentMode == RecipeScreenMode.common,
-          onTap: () {
-            setState(() {
-              currentMode = RecipeScreenMode.common;
-            });
-          },
+        DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Color(0x40000000),
+                offset: Offset(0, 4),
+                blurRadius: 4,
+              ),
+            ],
+          ),
+          child: SizedBox(
+            width: getWidth(context, percent: 1) - 19,
+            height: getHeight(context, baseSize: 75) + 45,
+          ),
         ),
-        _buildCategoryButton(
-          icon: IconProvider.clRes.buildImageUrl(),
-          label: 'Cluckmazing\nrecipes',
-          isActive: currentMode == RecipeScreenMode.cluckmazing,
-          onTap: () {
-            setState(() {
-              currentMode = RecipeScreenMode.cluckmazing;
-            });
-          },
-        ),
-        _buildCategoryButton(
-          icon: IconProvider.favRes.buildImageUrl(),
-          label: 'Favorite\nrecipes',
-          isActive: currentMode == RecipeScreenMode.favorites,
-          onTap: () {
-            setState(() {
-              currentMode = RecipeScreenMode.favorites;
-            });
-          },
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildCategoryButton(
+                category: Category.ordinary,
+                isActive: currentMode == RecipeScreenMode.common,
+                onTap: () {
+                  setState(() {
+                    currentMode = RecipeScreenMode.common;
+                  });
+                },
+              ),
+              _buildCategoryButton(
+                category: Category.cluckmazing,
+                isActive: currentMode == RecipeScreenMode.cluckmazing,
+                onTap: () {
+                  setState(() {
+                    currentMode = RecipeScreenMode.cluckmazing;
+                  });
+                },
+              ),
+              _buildCategoryButton(
+                category: Category.favorites,
+                isActive: currentMode == RecipeScreenMode.favorites,
+                onTap: () {
+                  setState(() {
+                    currentMode = RecipeScreenMode.favorites;
+                  });
+                },
+              ),
+            ],
+          ),
         ),
       ],
     );
   }
 
   Widget _buildCategoryButton({
-    required String icon,
-    required String label,
+    required Category category,
     required bool isActive,
     required VoidCallback onTap,
   }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 12),
-            child: AppButton(
-              color: isActive ? ButtonColors.purple : ButtonColors.darkPurple,
-              radius: 12,
-              height: 85,
-              width: getWidth(context, baseSize: 110),
-              onPressed: onTap,
-              widget: SizedBox(),
+    return AnimatedButton(
+      onPressed: onTap,
+      child: Opacity(
+        opacity: isActive ? 1 : 0.36,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Stack(
+              alignment: Alignment.bottomCenter,
+              clipBehavior: Clip.none,
+              children: [
+                DecoratedBox(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x40000000),
+                        offset: Offset(0, 4),
+                        blurRadius: 4,
+                      ),
+                    ],
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: category.colors,
+                    ),
+                  ),
+                  child: SizedBox(
+                    width: getWidth(context, baseSize: 102),
+                    height: getHeight(context, baseSize: 66),
+                  ),
+                ),
+                AppIcon(
+                  asset: category.iconPath,
+                  width: getWidth(context, baseSize: 102),
+                  fit: BoxFit.fitWidth,
+                ),
+              ],
             ),
-          ),
-          AppIcon(asset: icon, width: 78, height: 72),
-          Positioned(
-            bottom: 11,
-            child: SizedBox(
-              width: getWidth(context, baseSize: 110) - 23,
-              child: TextWithBorder(
-                label,
+            Gap(4),
+            SizedBox(
+              width: getWidth(context, baseSize: 102),
+              child: Text(
+                category.label,
 
                 textAlign: TextAlign.center,
-                borderColor: Color(0xFF2F0058),
-                fontSize: 34,
+                style: TextStyle(fontSize: 15, color: category.textColor),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
   Widget buildTop(List<Recipe> allRecipes, int count) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
           icon: AppIcon(
             asset: IconProvider.filter.buildImageUrl(),
-            width: 42,
-            height: 37,
+            width: 32,
+            height: 32,
           ),
           onPressed: () {
             showFilterPopup();
           },
         ),
-        AppButton(
-          color: ButtonColors.deepPurple,
-          width: getWidth(context, percent: 1) - 141,
-          bottomPadding: 2,
-          radius: 9,
-          height: 55,
-          widget: CupertinoTextField(
-            decoration: BoxDecoration(color: Colors.transparent),
-            placeholderStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
-            placeholder: 'Search...',
+        SizedBox(
+          height: 51,
+          width: getWidth(context, baseSize: 221),
+          child: CupertinoTextField(
             onChanged: (value) {
               setState(() {
                 searchQuery = value;
                 filteredRecipes(allRecipes);
               });
             },
+            prefix: Padding(
+              padding: const EdgeInsets.only(right: 10, left: 10),
+              child: AppIcon(asset: IconProvider.search.buildImageUrl()),
+            ),
+            textAlign: TextAlign.center,
+            padding: EdgeInsets.symmetric(vertical: 16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.white),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.white, Colors.white.withOpacity(0.54)],
+              ),
+            ),
           ),
         ),
         Gap(11),
@@ -367,8 +421,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           AppIcon(
             asset: IconProvider.shop.buildImageUrl(),
-            width: 42,
-            height: 40,
+            width: 32,
+            height: 32,
           ),
           if (count > 0)
             Positioned(
@@ -391,310 +445,607 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Widget buildRecipeItem(Recipe recipe){
+    return Stack(
+      children: [
+        AppButton(
+          fixedSize: Size(152, 266),
+          color: ButtonColors.yellow,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(
+              6,
+              6,
+              6,
+              6,
+            ),
+            child: Column(
+              children: [
+                AppIcon(
+                  asset: recipe.image,
+                  width: 139,
+                  height: 93,
+                ),
+                Gap(6),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment:
+                    CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: 140,
+                        child: Text(
+                          recipe.title,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize:
+                            recipe.title.length < 23
+                                ? 20
+                                : 17,
+                            color: Color(0xFF4B0000),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                        const EdgeInsets.symmetric(
+                          horizontal: 10,
+                        ),
+                        child: Row(
+                          children: [
+                            AppIcon(
+                              asset:
+                              IconProvider
+                                  .difficulty
+                                  .buildImageUrl(),
+                              width: 32,
+                              height: 32,
+                            ),
+                            Gap(5),
+                            Text(
+                              recipe.difficulty
+                                  .toString(),
+                            ),
+                            Spacer(),
+                            AppIcon(
+                              asset:
+                              IconProvider
+                                  .ingredients
+                                  .buildImageUrl(),
+                              width: 32,
+                              height: 32,
+                            ),
+                            Gap(5),
+                            Text(
+                              recipe.ingredients.length
+                                  .toString(),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Gap(3),
+                      Padding(
+                        padding:
+                        const EdgeInsets.symmetric(
+                          horizontal: 10,
+                        ),
+                        child: Row(
+                          children: [
+                            AppIcon(
+                              asset:
+                              IconProvider.spicy
+                                  .buildImageUrl(),
+                              width: 32,
+                              height: 32,
+                            ),
+                            Gap(5),
+                            Text(
+                              recipe.spicy.toString(),
+                            ),
+                            Spacer(),
+                            AppIcon(
+                              asset:
+                              IconProvider.timer
+                                  .buildImageUrl(),
+                              width: 32,
+                              height: 32,
+                            ),
+                            Gap(5),
+                            Text(
+                              recipe.timeInMinutes
+                                  .toString(),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      Row(
+                        mainAxisAlignment:
+                        MainAxisAlignment.end,
+                        children: [
+                          if (recipe.isCompleted)
+                            const Text(
+                              'done',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color(
+                                  0xFF4B0000,
+                                ),
+                              ),
+                            )
+                          else
+                            const Text(
+                              'in progress',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color(
+                                  0xFF4B0000,
+                                ),
+                              ),
+                            ),
+                          Gap(10),
+                          DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                              BorderRadius.circular(
+                                8,
+                              ),
+                            ),
+                            child: SizedBox(
+                              width: 32,
+                              height: 32,
+                              child:
+                              recipe.isCompleted
+                                  ? Icon(
+                                CupertinoIcons
+                                    .check_mark,
+                                color: Color(
+                                  0xFF4B0000,
+                                ),
+                              )
+                                  : null,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Gap(5),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          onPressed: () => openRecipe(recipe),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 8,
+            left: 9,
+          ),
+          child: AnimatedButton(
+            child: AppIcon(
+              fit: BoxFit.cover,
+              asset:
+              recipe.isFavorite
+                  ? IconProvider.heart
+                  .buildImageUrl()
+                  : IconProvider.heartGrey
+                  .buildImageUrl(),
+              width: 34,
+              height: 32,
+            ),
+            onPressed: () {
+              toggleFavorite(recipe);
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(
       builder: (context, state) {
-        if (state is! AppLoaded) return const SizedBox();
+        if (state is! AppLoaded)
+          return const Center(child: CupertinoActivityIndicator());
 
         return Stack(
           children: [
             SingleChildScrollView(
-              padding: const EdgeInsets.only(top: 140),
+              padding: const EdgeInsets.only(top: 120),
               child: Column(
                 children: [
                   buildCategoryButtons(),
+                  Gap(22),
                   if (currentMode != RecipeScreenMode.cluckmazing)
-                    ListView.separated(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: filteredRecipes(state.recipes).length,
-                      separatorBuilder: (context, index) => Gap(17),
-                      itemBuilder: (context, index) {
-                        final recipe = filteredRecipes(state.recipes)[index];
-
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 11),
-                          child: AppButton(
-                            color: ButtonColors.purple,
-                            width: getWidth(context, percent: 1) - 22,
-                            height: 124,
-                            widget: Padding(
-                              padding: const EdgeInsets.fromLTRB(6, 6, 12, 6),
-                              child: Row(
-                                children: [
-                                  AppIcon(
-                                    asset: recipe.image,
-                                    width: 101,
-                                    height: 101,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Gap(6),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            SizedBox(
-                                              width: getWidth(
-                                                context,
-                                                percent: 0.5,
-                                              ),
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: Text(recipe.title),
-                                              ),
-                                            ),
-                                            IconButton(
-                                              alignment: Alignment.centerRight,
-                                              iconSize: 33,
-                                              padding: EdgeInsets.zero,
-                                              icon: AppIcon(
-                                                fit: BoxFit.cover,
-                                                asset:
-                                                    IconProvider.heart
-                                                        .buildImageUrl(),
-                                                color:
-                                                    recipe.isFavorite
-                                                        ? null
-                                                        : Colors.black
-                                                            .withOpacity(0.5),
-                                                blendMode: BlendMode.srcATop,
-                                                width: 33,
-                                                height: 30,
-                                              ),
-                                              onPressed: () {
-                                                toggleFavorite(recipe);
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                        AppButton(
-                                          color: ButtonColors.deepPurple,
-                                          height: 31,
-                                          width: 121,
-                                          radius: 6,
-                                          bottomPadding: 1,
-                                          widget: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              for (int i = 0; i < 5; i++)
-                                                AppIcon(
-                                                  asset:
-                                                      IconProvider.bombres
-                                                          .buildImageUrl(),
-                                                  color:
-                                                      i < recipe.difficulty
-                                                          ? null
-                                                          : Colors.black
-                                                              .withOpacity(0.5),
-                                                  blendMode: BlendMode.srcATop,
-                                                  width: 21,
-                                                  height: 21,
-                                                ),
-                                            ],
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            if (recipe.isCompleted)
-                                              const Text('done')
-                                            else
-                                              const Text('in progress'),
-                                            Gap(6),
-                                            AppButton(
-                                              radius: 6,
-                                              topPadding: 0,
-                                              bottomPadding: 0,
-                                              color: ButtonColors.deepPurple,
-                                              widget:
-                                                  recipe.isCompleted
-                                                      ? Icon(
-                                                        CupertinoIcons
-                                                            .check_mark,
-                                                        color: const Color(
-                                                          0xFFF285E5,
-                                                        ),
-                                                      )
-                                                      : SizedBox(),
-                                              width: 32,
-                                              height: 32,
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            onPressed: () => openRecipe(recipe),
-                          ),
-                        );
-                      },
+                    Wrap(
+                      spacing: 14,
+                      runSpacing: 14,
+                      children:
+                          filteredRecipes(state.recipes).map((recipe) {
+                            return buildRecipeItem(recipe);
+                          }).toList(),
                     )
                   else
                     Padding(
                       padding: const EdgeInsets.only(top: 15),
                       child: Wrap(
-                        spacing: 5,
+                        spacing: 14,
+                        runSpacing: 14,
                         children: [
                           for (final recipe in filteredRecipes(state.recipes))
-                            SizedBox(
-                              width: 115,
-                              height: 110,
-                              child: Stack(
-                                children: [
-                                  GestureDetector(
-                                    onTap:
-                                        () =>
-                                            recipe.isLocked
-                                                ? showCupertinoSnackBar(
-                                                  context,
-                                                  'This recipe is locked. Need complite previous recipes to unlock this one. You need to complete ${recipe.requiredCountToUnlock - state.recipes.where((r) => r.isCompleted).length}',
-                                                )
-                                                : openRecipe(recipe),
-                                    child: DecoratedBox(
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image:
-                                              recipe.isLocked
-                                                  ? AssetImage(
-                                                    IconProvider.bomb
-                                                        .buildImageUrl(),
-                                                  )
-                                                  : AssetImage(recipe.image),
+                            Stack(
+                              children: [
+                                AppButton(
+                                  fixedSize: Size(152, 266),
+                                  color: ButtonColors.yellow,
+                                  child: Padding(
+                                    padding: const EdgeInsets.fromLTRB(
+                                      6,
+                                      6,
+                                      6,
+                                      6,
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        AppIcon(
+                                          asset: recipe.image,
+                                          width: 139,
+                                          height: 93,
                                         ),
-                                        borderRadius: BorderRadius.circular(14),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(left: 1),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                left: 9,
-                                                right: 9,
-                                                bottom: 10,
-                                              ),
-                                              child: TextWithBorder(
-                                                recipe.title,
-                                                borderColor: Color(0xFF2F0058),
-                                                fontSize:
-                                                    recipe.title.length > 27
-                                                        ? 13
-                                                        : 16,
-                                              ),
-                                            ),
-                                            if (recipe.isLocked == false)
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                  left: 10,
-                                                ),
-                                                child: AppButton(
-                                                  color:
-                                                      ButtonColors.deepPurple,
-                                                  height: 20,
-                                                  width: 90,
-                                                  radius: 6,
-                                                  bottomPadding: 1,
-                                                  widget: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
-                                                    children: [
-                                                      for (
-                                                        int i = 0;
-                                                        i < 5;
-                                                        i++
-                                                      )
-                                                        AppIcon(
-                                                          asset:
-                                                              IconProvider
-                                                                  .bombres
-                                                                  .buildImageUrl(),
-                                                          color:
-                                                              i <
-                                                                      recipe
-                                                                          .difficulty
-                                                                  ? null
-                                                                  : Colors.black
-                                                                      .withOpacity(
-                                                                        0.5,
-                                                                      ),
-                                                          blendMode:
-                                                              BlendMode.srcATop,
-                                                          width: 15,
-                                                          height: 15,
-                                                        ),
-                                                    ],
+                                        Gap(6),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              SizedBox(
+                                                width: 140,
+                                                child: Text(
+                                                  recipe.title,
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        recipe.title.length < 23
+                                                            ? 20
+                                                            : 17,
+                                                    color: Color(0xFF4B0000),
                                                   ),
                                                 ),
                                               ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      top: 8,
-                                      right: 7,
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Spacer(),
-                                        if (recipe.isLocked)
-                                          Image.asset(
-                                            IconProvider.closeRes.buildImageUrl(),
-                                          )
-                                        else
-                                          AppButton(
-                                            radius: 6,
-                                            topPadding: 0,
-                                            bottomPadding: 0,
-                                            color: ButtonColors.deepPurple,
-                                            widget:
-                                                recipe.isCompleted
-                                                    ? Icon(
-                                                      CupertinoIcons.check_mark,
-                                                      color: const Color(
-                                                        0xFFF285E5,
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                      horizontal: 10,
+                                                    ),
+                                                child: Row(
+                                                  children: [
+                                                    AppIcon(
+                                                      asset:
+                                                          IconProvider
+                                                              .difficulty
+                                                              .buildImageUrl(),
+                                                      width: 32,
+                                                      height: 32,
+                                                    ),
+                                                    Gap(5),
+                                                    Text(
+                                                      recipe.difficulty
+                                                          .toString(),
+                                                    ),
+                                                    Spacer(),
+                                                    AppIcon(
+                                                      asset:
+                                                          IconProvider
+                                                              .ingredients
+                                                              .buildImageUrl(),
+                                                      width: 32,
+                                                      height: 32,
+                                                    ),
+                                                    Gap(5),
+                                                    Text(
+                                                      recipe.ingredients.length
+                                                          .toString(),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Gap(3),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                      horizontal: 10,
+                                                    ),
+                                                child: Row(
+                                                  children: [
+                                                    AppIcon(
+                                                      asset:
+                                                          IconProvider.spicy
+                                                              .buildImageUrl(),
+                                                      width: 32,
+                                                      height: 32,
+                                                    ),
+                                                    Gap(5),
+                                                    Text(
+                                                      recipe.spicy.toString(),
+                                                    ),
+                                                    Spacer(),
+                                                    AppIcon(
+                                                      asset:
+                                                          IconProvider.timer
+                                                              .buildImageUrl(),
+                                                      width: 32,
+                                                      height: 32,
+                                                    ),
+                                                    Gap(5),
+                                                    Text(
+                                                      recipe.timeInMinutes
+                                                          .toString(),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Spacer(),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  if (recipe.isCompleted)
+                                                    const Text(
+                                                      'done',
+                                                      style: TextStyle(
+                                                        fontSize: 17,
+                                                        color: Color(
+                                                          0xFF4B0000,
+                                                        ),
                                                       ),
                                                     )
-                                                    : SizedBox(),
-                                            width: 32,
-                                            height: 32,
+                                                  else
+                                                    const Text(
+                                                      'in progress',
+                                                      style: TextStyle(
+                                                        fontSize: 17,
+                                                        color: Color(
+                                                          0xFF4B0000,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  Gap(10),
+                                                  DecoratedBox(
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.white,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            8,
+                                                          ),
+                                                    ),
+                                                    child: SizedBox(
+                                                      width: 32,
+                                                      height: 32,
+                                                      child:
+                                                          recipe.isCompleted
+                                                              ? Icon(
+                                                                CupertinoIcons
+                                                                    .check_mark,
+                                                                color: Color(
+                                                                  0xFF4B0000,
+                                                                ),
+                                                              )
+                                                              : null,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Gap(5),
+                                            ],
                                           ),
+                                        ),
                                       ],
                                     ),
                                   ),
-                                ],
-                              ),
+                                  onPressed: () =>  recipe.isLocked
+                                      ? showCupertinoSnackBar(
+                                    context,
+                                    'This recipe is locked. Need complite previous recipes to unlock this one. You need to complete ${recipe.requiredCountToUnlock - state.recipes.where((r) => r.isCompleted).length}',
+                                  )
+                                      : openRecipe(recipe),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 8,
+                                    left: 9,
+                                  ),
+                                  child: AnimatedButton(
+                                    child: AppIcon(
+                                      fit: BoxFit.cover,
+                                      asset:
+                                          recipe.isFavorite
+                                              ? IconProvider.heart
+                                                  .buildImageUrl()
+                                              : IconProvider.heartGrey
+                                                  .buildImageUrl(),
+                                      width: 34,
+                                      height: 32,
+                                    ),
+                                    onPressed: () {
+                                      toggleFavorite(recipe);
+                                    },
+                                  ),
+                                ),
+                              ],
                             ),
+                          SizedBox(
+                            width: 115,
+                            height: 110,
+                            child: Stack(
+                              children: [
+                                GestureDetector(
+                                  onTap:
+                                      () =>
+                                          recipe.isLocked
+                                              ? showCupertinoSnackBar(
+                                                context,
+                                                'This recipe is locked. Need complite previous recipes to unlock this one. You need to complete ${recipe.requiredCountToUnlock - state.recipes.where((r) => r.isCompleted).length}',
+                                              )
+                                              : openRecipe(recipe),
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image:
+                                            recipe.isLocked
+                                                ? AssetImage(
+                                                  IconProvider.closeRes
+                                                      .buildImageUrl(),
+                                                )
+                                                : AssetImage(recipe.image),
+                                      ),
+                                      borderRadius: BorderRadius.circular(14),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 1),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              left: 9,
+                                              right: 9,
+                                              bottom: 10,
+                                            ),
+                                            child: TextWithBorder(
+                                              recipe.title,
+                                              borderColor: Color(0xFF2F0058),
+                                              fontSize:
+                                                  recipe.title.length > 27
+                                                      ? 13
+                                                      : 16,
+                                            ),
+                                          ),
+                                          if (recipe.isLocked == false)
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                left: 10,
+                                              ),
+                                              child: AppButton(
+                                                color: ButtonColors.yellow,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  children: [
+                                                    for (int i = 0; i < 5; i++)
+                                                      AppIcon(
+                                                        asset:
+                                                            IconProvider
+                                                                .difficulty
+                                                                .buildImageUrl(),
+                                                        color:
+                                                            i <
+                                                                    recipe
+                                                                        .difficulty
+                                                                ? null
+                                                                : Colors.black
+                                                                    .withOpacity(
+                                                                      0.5,
+                                                                    ),
+                                                        blendMode:
+                                                            BlendMode.srcATop,
+                                                        width: 15,
+                                                        height: 15,
+                                                      ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 8,
+                                    right: 7,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Spacer(),
+                                      if (recipe.isLocked)
+                                        Image.asset(
+                                          IconProvider.closeRes.buildImageUrl(),
+                                        )
+                                      else
+                                        AppButton(
+                                          color: ButtonColors.yellow,
+                                          child:
+                                              recipe.isCompleted
+                                                  ? Icon(
+                                                    CupertinoIcons.check_mark,
+                                                    color: const Color(
+                                                      0xFFF285E5,
+                                                    ),
+                                                  )
+                                                  : SizedBox(),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
                 ],
               ),
             ),
-            AppBarWidget(
-              widgets: buildTop(state.recipes, state.shoppingList.length),
+            SafeArea(
+              bottom: false,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
+                child: buildTop(state.recipes, state.shoppingList.length),
+              ),
             ),
           ],
         );
       },
     );
   }
+}
+
+enum Category {
+  ordinary(
+    colors: [Color(0xFF6499FC), Color(0xFF3C5B96)],
+    iconPath: 'assets/images/ord_res.png',
+    label: 'Ordinary\nrecipes',
+    textColor: Color(0xFF1E68D7),
+  ),
+  cluckmazing(
+    colors: [Color(0xFFBF64FC), Color(0xFF723C96)],
+    iconPath: 'assets/images/cl_res.png',
+    label: 'Cluckmazing\nrecipes',
+    textColor: Color(0xFF54009E),
+  ),
+  favorites(
+    colors: [Color(0xFFBDEA2B), Color(0xFF969B00)],
+    iconPath: 'assets/images/fav_res.png',
+    label: 'Favorite\nrecipes',
+    textColor: Color(0xFF579E00),
+  );
+
+  final List<Color> colors;
+  final String iconPath;
+  final String label;
+  final Color textColor;
+
+  const Category({
+    required this.colors,
+    required this.iconPath,
+    required this.label,
+    required this.textColor,
+  });
 }

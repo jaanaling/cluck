@@ -30,7 +30,7 @@
       {"description": "Fry chicken until golden and crispy, about 6-7 minutes per side.", "timer": 840},
       {"description": "Drain excess oil on paper towels, let rest for 5 minutes before serving.", "timer": 300}
     ],
-    "image": "assets/images/Golden Crispy Chicken.png"
+    "image": "assets/images/Golden Crispy Chicken.webp"
   },
   {
     "id": "chicktacular_blaze",
@@ -63,7 +63,7 @@
       {"description": "Increase oven temperature to broil for 2-3 minutes to caramelize glaze.", "timer": 180},
       {"description": "Garnish with green onions before serving.", "timer": null}
     ],
-    "image": "assets/images/Chicktacular Blaze.png"
+    "image": "assets/images/Chicktacular Blaze.webp"
   },
   {
     "id": "juicy_herb_roasted_chicken",
@@ -93,7 +93,7 @@
       {"description": "Check internal temperature: it should reach 165°F (74°C) in the thickest part.", "timer": null},
       {"description": "Let the chicken rest for 10 minutes before carving and serving.", "timer": 600}
     ],
-    "image": "assets/images/Juicy Herb-Roasted Chicken.png"
+    "image": "assets/images/Juicy Herb-Roasted Chicken.webp"
   },
   {
     "id": "spicy_garlic_chicken_wings",
@@ -122,7 +122,7 @@
       {"description": "Combine melted butter, hot sauce, minced garlic, and chili flakes (if using).", "timer": null},
       {"description": "Toss the baked wings in the spicy garlic sauce and serve immediately.", "timer": null}
     ],
-    "image": "assets/images/Spicy Garlic Chicken Wings.png"
+    "image": "assets/images/Spicy Garlic Chicken Wings.webp"
   },
   {
     "id": "honey_glazed_chicken_thighs",
@@ -153,7 +153,7 @@
       {"description": "Broil for the last 2-3 minutes to caramelize the glaze.", "timer": 180},
       {"description": "Let the chicken rest for 5 minutes before serving.", "timer": 300}
     ],
-    "image": "assets/images/Honey Glazed Chicken Thighs.png"
+    "image": "assets/images/Honey Glazed Chicken Thighs.webp"
   },
   {
     "id": "classic_chicken_parmesan",
@@ -184,7 +184,7 @@
       {"description": "Transfer chicken to a baking dish, top with marinara sauce and mozzarella.", "timer": null},
       {"description": "Bake for 15 minutes or until chicken is cooked through and cheese is bubbly.", "timer": 900}
     ],
-    "image": "assets/images/Classic Chicken Parmesan.png"
+    "image": "assets/images/Classic Chicken Parmesan.webp"
   },
   {
     "id": "creamy_garlic_butter_chicken",
@@ -213,7 +213,7 @@
       {"description": "Pour in chicken broth and heavy cream, stirring to combine.", "timer": null},
       {"description": "Return chicken to the skillet and simmer for 5-7 minutes until sauce thickens.", "timer": 420}
     ],
-    "image": "assets/images/Creamy Garlic Butter Chicken.png"
+    "image": "assets/images/Creamy Garlic Butter Chicken.webp"
   },
   {
     "id": "smoky_bbq_chicken_strips",
@@ -240,7 +240,7 @@
       {"description": "Arrange on the baking sheet and bake for 15 minutes.", "timer": 900},
       {"description": "Remove from oven, brush with BBQ sauce, and bake an additional 5-8 minutes.", "timer": 480}
     ],
-    "image": "assets/images/Smoky BBQ Chicken Strips.png"
+    "image": "assets/images/Smoky BBQ Chicken Strips.webp"
   },
   {
     "id": "lemon_pepper_chicken_bites",
@@ -267,7 +267,7 @@
       {"description": "Sear chicken bites for 5-6 minutes until cooked through.", "timer": 360},
       {"description": "Add lemon juice and stir to coat chicken before serving.", "timer": null}
     ],
-    "image": "assets/images/Lemon Pepper Chicken Bites.png"
+    "image": "assets/images/Lemon Pepper Chicken Bites.webp"
   },
   {
     "id": "savory_teriyaki_chicken",
@@ -293,7 +293,7 @@
       {"description": "Cut chicken into strips. Sear in a skillet over medium-high heat for 5 minutes.", "timer": 300},
       {"description": "Pour in teriyaki sauce mixture and simmer until chicken is cooked and sauce thickens.", "timer": 300}
     ],
-    "image": "assets/images/Savory Teriyaki Chicken.png"
+    "image": "assets/images/Savory Teriyaki Chicken.webp"
   },
   {
     "id": "crispy_buttermilk_fried_chicken",
@@ -321,7 +321,7 @@
       {"description": "Remove chicken from buttermilk and dredge in the seasoned flour.", "timer": null},
       {"description": "Heat oil to 350°F (175°C) and fry chicken until golden brown and cooked through.", "timer": 600}
     ],
-    "image": "assets/images/Crispy Buttermilk Fried Chicken.png"
+    "image": "assets/images/Crispy Buttermilk Fried Chicken.webp"
   },
   {
     "id": "sticky_sweet_soy_chicken",
@@ -348,7 +348,7 @@
       {"description": "Mix soy sauce, honey, brown sugar, garlic, and cornstarch in a bowl.", "timer": null},
       {"description": "Pour sauce over chicken and simmer until sauce is thick and chicken is fully cooked.", "timer": 300}
     ],
-    "image": "assets/images/Sticky Sweet Soy Chicken.png"
+    "image": "assets/images/Sticky Sweet Soy Chicken.webp"
   },
   {
     "id": "roasted_garlic_and_rosemary_chicken",
@@ -376,7 +376,7 @@
       {"description": "Rub mixture all over chicken and place on a baking sheet.", "timer": null},
       {"description": "Roast for 45-50 minutes or until chicken is fully cooked.", "timer": 3000}
     ],
-    "image": "assets/images/Roasted Garlic and Rosemary Chicken.png"
+    "image": "assets/images/Roasted Garlic and Rosemary Chicken.webp"
   },
   {
     "id": "sizzling_szechuan_chicken",
@@ -404,7 +404,7 @@
       {"description": "Add dried chilies, garlic, peppercorns, soy sauce, vinegar, and sugar.", "timer": null},
       {"description": "Cook for another 2-3 minutes, allowing flavors to meld.", "timer": 180}
     ],
-    "image": "assets/images/Sizzling Szechuan Chicken.png"
+    "image": "assets/images/Sizzling Szechuan Chicken.webp"
   },
   {
     "id": "tender_baked_chicken_breasts",
@@ -431,7 +431,7 @@
       {"description": "Rub seasoning onto chicken and place on a baking sheet.", "timer": null},
       {"description": "Bake for 20-22 minutes or until cooked through.", "timer": 1320}
     ],
-    "image": "assets/images/Tender Baked Chicken Breasts.png"
+    "image": "assets/images/Tender Baked Chicken Breasts.webp"
   },
   {
     "id": "honey_mustard_chicken_delight",
@@ -458,7 +458,7 @@
       {"description": "Place chicken in baking dish, season with salt and pepper, then coat with sauce.", "timer": null},
       {"description": "Bake for about 35 minutes, or until chicken is fully cooked.", "timer": 2100}
     ],
-    "image": "assets/images/Honey Mustard Chicken Delight.png"
+    "image": "assets/images/Honey Mustard Chicken Delight.webp"
   },
   {
     "id": "fiery_buffalo_chicken_drumsticks",
@@ -486,7 +486,7 @@
       {"description": "Mix melted butter with hot sauce.", "timer": null},
       {"description": "Brush sauce on drumsticks and bake another 10 minutes.", "timer": 600}
     ],
-    "image": "assets/images/Fiery Buffalo Chicken Drumsticks.png"
+    "image": "assets/images/Fiery Buffalo Chicken Drumsticks.webp"
   },
   {
     "id": "cheesy_chicken_alfredo",
@@ -514,7 +514,7 @@
       {"description": "Add cream, Parmesan, garlic powder, salt, and pepper to create Alfredo sauce.", "timer": null},
       {"description": "Combine sauce with drained pasta and serve.", "timer": null}
     ],
-    "image": "assets/images/Cheesy Chicken Alfredo.png"
+    "image": "assets/images/Cheesy Chicken Alfredo.webp"
   },
   {
     "id": "crunchy_panko_chicken_tenders",
@@ -541,7 +541,7 @@
       {"description": "Dredge chicken in flour, dip in egg, then coat in panko.", "timer": null},
       {"description": "Place on the baking sheet and bake for 15-18 minutes until golden.", "timer": 1080}
     ],
-    "image": "assets/images/Crunchy Panko Chicken Tenders.png"
+    "image": "assets/images/Crunchy Panko Chicken Tenders.webp"
   },
   {
     "id": "zesty_cajun_chicken",
@@ -565,7 +565,7 @@
       {"description": "Heat a skillet over medium-high heat and sauté chicken for 5-6 minutes.", "timer": 360},
       {"description": "Cook until chicken is done and edges are slightly crisp.", "timer": null}
     ],
-    "image": "assets/images/Zesty Cajun Chicken.png"
+    "image": "assets/images/Zesty Cajun Chicken.webp"
   },
   {
     "id": "sun_dried_tomato_basil_chicken",
@@ -593,7 +593,7 @@
       {"description": "Stir in heavy cream and basil, simmer for 3-4 minutes.", "timer": 240},
       {"description": "Return chicken to the sauce and coat evenly.", "timer": null}
     ],
-    "image": "assets/images/Sun-Dried Tomato Basil Chicken.png"
+    "image": "assets/images/Sun-Dried Tomato Basil Chicken.webp"
   },
   {
     "id": "classic_chicken_and_rice_casserole",
@@ -620,7 +620,7 @@
       {"description": "Add cubed chicken on top and cover with foil.", "timer": null},
       {"description": "Bake for 45-50 minutes or until rice is tender and chicken is cooked.", "timer": 3000}
     ],
-    "image": "assets/images/Classic Chicken and Rice Casserole.png"
+    "image": "assets/images/Classic Chicken and Rice Casserole.webp"
   },
   {
     "id": "maple_dijon_glazed_chicken",
@@ -647,7 +647,7 @@
       {"description": "Place chicken on the sheet and brush with half the glaze.", "timer": null},
       {"description": "Bake for 20 minutes, brush with remaining glaze, then bake 5-10 more minutes.", "timer": 1500}
     ],
-    "image": "assets/images/Maple Dijon Glazed Chicken.png"
+    "image": "assets/images/Maple Dijon Glazed Chicken.webp"
   },
   {
     "id": "butter_chicken_bliss",
@@ -676,7 +676,7 @@
       {"description": "Pour in tomato sauce and simmer for 5-7 minutes.", "timer": 420},
       {"description": "Stir in heavy cream; simmer briefly until sauce is velvety.", "timer": 180}
     ],
-    "image": "assets/images/Butter Chicken Bliss.png"
+    "image": "assets/images/Butter Chicken Bliss.webp"
   },
   {
     "id": "slow_cooked_lemon_thyme_chicken",
@@ -702,7 +702,7 @@
       {"description": "Add chicken broth, lemon juice, thyme, and garlic.", "timer": null},
       {"description": "Cook on low for 4-5 hours or until chicken is tender.", "timer": 14400}
     ],
-    "image": "assets/images/Slow-Cooked Lemon Thyme Chicken.png"
+    "image": "assets/images/Slow-Cooked Lemon Thyme Chicken.webp"
   },
   {
     "id": "smokin_cluck_supreme",
@@ -730,7 +730,7 @@
       {"description": "Rub the seasoning mix all over the chicken.", "timer": null},
       {"description": "Place chicken on the grill/smoker and cook for 60-70 minutes or until internal temp reaches 165°F (74°C).", "timer": 4200}
     ],
-    "image": "assets/images/Smokin’ Cluck Supreme.png"
+    "image": "assets/images/Smokin’ Cluck Supreme.webp"
   },
   {
     "id": "celestial_firebird",
@@ -758,7 +758,7 @@
       {"description": "Roast at 375°F (190°C) for 60-70 minutes, basting occasionally.", "timer": 4200},
       {"description": "Finish under broiler for a few minutes to crisp the skin.", "timer": 180}
     ],
-    "image": "assets/images/Celestial Firebird.png"
+    "image": "assets/images/Celestial Firebird.webp"
   },
   {
     "id": "chickstounding_inferno",
@@ -786,7 +786,7 @@
       {"description": "Grill or bake at 400°F (200°C) for 30-35 minutes, turning occasionally.", "timer": 2100},
       {"description": "Brush with remaining sauce and cook 5 more minutes.", "timer": 300}
     ],
-    "image": "assets/images/Chickstounding Inferno.png"
+    "image": "assets/images/Chickstounding Inferno.webp"
   },
   {
     "id": "epic_cluckstorm",
@@ -813,7 +813,7 @@
       {"description": "Roast for 35-40 minutes, until cooked through.", "timer": 2400},
       {"description": "Increase heat to broil for 2-3 minutes for extra crispness.", "timer": 180}
     ],
-    "image": "assets/images/Epic Cluckstorm.png"
+    "image": "assets/images/Epic Cluckstorm.webp"
   },
   {
     "id": "majestic_phoenix_feast",
@@ -840,6 +840,6 @@
       {"description": "Coat chicken thoroughly with the paste.", "timer": null},
       {"description": "Cook for 90-100 minutes or until internal temperature reaches 165°F (74°C).", "timer": 5400}
     ],
-    "image": "assets/images/Majestic Phoenix Feast.png"
+    "image": "assets/images/Majestic Phoenix Feast.webp"
   }
 ]

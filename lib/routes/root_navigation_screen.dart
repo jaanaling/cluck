@@ -28,11 +28,10 @@ class _RootNavigationScreenState extends State<RootNavigationScreen> {
           Positioned.fill(
             child: DecoratedBox(
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    IconProvider.background.buildImageUrl(),
-                  ),
-                  fit: BoxFit.cover,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Color(0xFFFBAD41), Color(0xFFFEC463)],
                 ),
               ),
             ),

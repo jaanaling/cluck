@@ -1,6 +1,5 @@
 import 'dart:async';
 
-
 import 'package:cluckmazing_recipe/src/core/utils/app_icon.dart';
 import 'package:cluckmazing_recipe/src/core/utils/cupertino_snack_bar.dart';
 import 'package:cluckmazing_recipe/src/core/utils/icon_provider.dart';
@@ -8,12 +7,16 @@ import 'package:cluckmazing_recipe/src/core/utils/size_utils.dart';
 import 'package:cluckmazing_recipe/src/main/bloc/app_bloc.dart';
 import 'package:cluckmazing_recipe/src/main/model/recipe.dart';
 import 'package:cluckmazing_recipe/src/main/model/shopping_list.dart';
+import 'package:cluckmazing_recipe/ui_kit/app_bar.dart';
+import 'package:cluckmazing_recipe/ui_kit/gradient_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:uuid/uuid.dart';
+
+import '../../../ui_kit/app_button.dart';
 
 class RecipeScreen extends StatefulWidget {
   final Recipe recipe;
@@ -73,57 +76,61 @@ class _RecipeScreenState extends State<RecipeScreen> {
       _setupCurrentStepTimer();
     } else {
       context.read<AppBloc>().add(
-            UpdateRecipeEvent(
-              widget.recipe.copyWith(isCompleted: true),
-            ),
-          );
+        UpdateRecipeEvent(widget.recipe.copyWith(isCompleted: true)),
+      );
       showAdaptiveDialog(
-          context: context,
-          builder: (_) => StatefulBuilder(
-                builder: (context, setState) => Dialog(
-                  backgroundColor: Colors.transparent,
-                  insetPadding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-                  child: Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: AppButton(
-                          color: ButtonColors.purple,
-                          bottomPadding: 14,
-                          radius: 19,
-                          width: 314,
-                          height: 154,
-                          widget: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const GradientText('CONGRATULATIONS!', fontSize: 23, isCenter: true,),
-                              Gap(5),
-                              const Text('You have completed this recipe!'),
-                              _actions(context, () => setState(() {}), true),
-                            ],
+        context: context,
+        builder:
+            (_) => StatefulBuilder(
+              builder:
+                  (context, setState) => Dialog(
+                    backgroundColor: Colors.transparent,
+                    insetPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 24,
+                    ),
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: AppButton(
+                            color: ButtonColors.white,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const GradientText(
+                                  'CONGRATULATIONS!',
+                                  fontSize: 23,
+                                  isCenter: true,
+                                ),
+                                Gap(5),
+                                const Text('You have completed this recipe!'),
+                                _actions(context, () => setState(() {}), true),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        right: 17,
-                        child: AppButton(
-                          onPressed: () => context
-                            ..pop()
-                            ..pop(),
-                          color: ButtonColors.blue,
-                          bottomPadding: 7,
-                          radius: 19,
-                          widget: const Text('back', style: TextStyle(fontSize: 26),),
-                          width: 142,
-                          height: 63,
+                        Positioned(
+                          bottom: 0,
+                          right: 17,
+                          child: AppButton(
+                            onPressed:
+                                () =>
+                                    context
+                                      ..pop()
+                                      ..pop(),
+                            color: ButtonColors.yellow,
+                            child: const Text(
+                              'back',
+                              style: TextStyle(fontSize: 26),
+                            ),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ));
+            ),
+      );
     }
   }
 
@@ -166,64 +173,70 @@ class _RecipeScreenState extends State<RecipeScreen> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 separatorBuilder: (context, index) => const Gap(16),
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      AppButton(
-                        bottomPadding: 6,
-                        color: ButtonColors.purple,
-                        width:
-                            getWidth(context, percent: 1) - 16 - 11 - 61 - 40,
-                        height: 87,
-                        widget: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 14),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                width: getWidth(context, percent: 0.44),
-                                child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    alignment: Alignment.centerLeft,
-
-                                    child: Text(
-                                        widget.recipe.ingredients[index].name,)),
+                itemBuilder:
+                    (context, index) => Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AppButton(
+                            color: ButtonColors.yellow,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 14,
                               ),
-                              Text(widget.recipe.ingredients[index].quantity),
-                            ],
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width: getWidth(context, percent: 0.44),
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      alignment: Alignment.centerLeft,
+
+                                      child: Text(
+                                        widget.recipe.ingredients[index].name,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    widget.recipe.ingredients[index].quantity,
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      AppButton(
-                        color: ButtonColors.blue,
-                        width: 61,
-                        height: 61,
-                        bottomPadding: 5,
-                        widget: AppIcon(
-                          asset: IconProvider.shop.buildImageUrl(),
-                          width: 50,
-                          height: 43,
-                        ),
-                        onPressed: () {
-                          context.read<AppBloc>().add(
+                          AppButton(
+                            color: ButtonColors.yellow,
+                            child: AppIcon(
+                              asset: IconProvider.shop.buildImageUrl(),
+                              width: 50,
+                              height: 43,
+                            ),
+                            onPressed: () {
+                              context.read<AppBloc>().add(
                                 AddShoppingItemEvent(
                                   ShoppingList(
                                     id: const Uuid().v4(),
                                     name: widget.recipe.ingredients[index].name,
-                                    quantity: widget
-                                        .recipe.ingredients[index].quantity,
+                                    quantity:
+                                        widget
+                                            .recipe
+                                            .ingredients[index]
+                                            .quantity,
                                   ),
                                 ),
                               );
-                          showCupertinoSnackBar(context,
-                              '${widget.recipe.ingredients[index].name}: Added to shopping list');
-                        },
+                              showCupertinoSnackBar(
+                                context,
+                                '${widget.recipe.ingredients[index].name}: Added to shopping list',
+                              );
+                            },
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
+                    ),
               ),
               Gap(30),
               Stack(
@@ -276,7 +289,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
                       if (currentStep > 0)
                         IconButton(
                           icon: AppIcon(
-                            asset: IconProvider.arrow.buildImageUrl(),
+                            asset: IconProvider.back.buildImageUrl(),
                             width: 50,
                             height: 43,
                           ),
@@ -291,14 +304,12 @@ class _RecipeScreenState extends State<RecipeScreen> {
                         )
                       else
                         const SizedBox(width: 65),
-                      SizedBox(
-                        width: getWidth(context, percent: 0.6),
-                      ),
+                      SizedBox(width: getWidth(context, percent: 0.6)),
                       IconButton(
                         icon: Transform.rotate(
                           angle: 3.14,
                           child: AppIcon(
-                            asset: IconProvider.arrow.buildImageUrl(),
+                            asset: IconProvider.back.buildImageUrl(),
                             width: 50,
                             height: 43,
                           ),
@@ -319,10 +330,12 @@ class _RecipeScreenState extends State<RecipeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                    width: getWidth(context, percent: 0.5),
-                    child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Text(widget.recipe.title))),
+                  width: getWidth(context, percent: 0.5),
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(widget.recipe.title),
+                  ),
+                ),
                 _actions(context, () => setState(() {}), false),
               ],
             ),
@@ -346,10 +359,10 @@ class _RecipeScreenState extends State<RecipeScreen> {
           ),
           onPressed: () {
             context.read<AppBloc>().add(
-                  UpdateRecipeEvent(
-                    widget.recipe.copyWith(isFavorite: !isFavorite),
-                  ),
-                );
+              UpdateRecipeEvent(
+                widget.recipe.copyWith(isFavorite: !isFavorite),
+              ),
+            );
             isFavorite = !isFavorite;
             setStatee();
             setState(() {});
@@ -362,8 +375,8 @@ class _RecipeScreenState extends State<RecipeScreen> {
             width: 32,
             height: 33,
           ),
-          onPressed: () =>
-              _shareRecipe(isdialog ? shareButtonKey2 : shareButtonKey),
+          onPressed:
+              () => _shareRecipe(isdialog ? shareButtonKey2 : shareButtonKey),
         ),
       ],
     );
