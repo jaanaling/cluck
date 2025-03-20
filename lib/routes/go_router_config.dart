@@ -1,5 +1,6 @@
 
 import 'package:cluckmazing_recipe/src/main/model/recipe.dart';
+import 'package:cluckmazing_recipe/src/main/presentation/history_screen.dart';
 import 'package:cluckmazing_recipe/src/main/presentation/home_screen.dart';
 import 'package:cluckmazing_recipe/src/main/presentation/recipe_screen.dart';
 import 'package:cluckmazing_recipe/src/main/presentation/shop_screen.dart';
@@ -66,6 +67,19 @@ GoRouter buildGoRouter = GoRouter(
                               colors: [Color(0xFF70AD50), Color(0xFF89C96D)],
                             ),
                           ),child: ShopScreen());
+                    },
+                  ),
+                  GoRoute(
+                    path: 'history',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return DecoratedBox(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Color(0xFF70AD50), Color(0xFF89C96D)],
+                            ),
+                          ),child: HistoryScreen());
                     },
                   ),
                 ]),

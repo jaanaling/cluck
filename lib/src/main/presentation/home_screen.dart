@@ -39,11 +39,23 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       builder:
           (_) => CupertinoActionSheet(
-            title: const Text('Select a filter'),
-            message: const Text('Filter by difficulty or pass rate'),
+            title: const Text('Select filter',
+              style: TextStyle(
+                fontFamily: 'mexe',
+              ),),
+            message: const Text('Filter by spice or difficulty',
+              style: TextStyle(
+                fontFamily: 'mexe',
+              ),),
             actions: [
               CupertinoActionSheetAction(
-                child: const Text('Filter by complexity'),
+                child: const Text(
+                  'Filter by difficulty',
+                  style: TextStyle(
+                    fontFamily: 'mexe',
+                    color: Color(0xFF4B0000),
+                  ),
+                ),
                 onPressed: () {
                   // Закрываем ActionSheet и открываем Picker
                   context.pop();
@@ -51,26 +63,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               CupertinoActionSheetAction(
-                child: const Text('Filter by spicy'),
+                child: const Text(
+                  'Filter by spicy',
+                  style: TextStyle(
+                    fontFamily: 'mexe',
+                    color: Color(0xFF4B0000),
+                  ),
+                ),
                 onPressed: () {
                   // Закрываем ActionSheet и открываем Picker
                   context.pop();
                   showSpicyPicker();
                 },
               ),
-
-              CupertinoActionSheetAction(
-                child: const Text('Passage filter'),
-                onPressed: () {
-                  setState(() {
-                    showCompletedOnly = !showCompletedOnly;
-                  });
-                  context.pop();
-                },
-              ),
               if (Platform.isIOS)
                 CupertinoActionSheetAction(
-                  child: const Text('Reset filters'),
+                  child: const Text(
+                    'Reset filters',
+                    style: TextStyle(
+                      fontFamily: 'mexe',
+                      color: Color(0xFF4B0000),
+                    ),
+                  ),
                   onPressed: () {
                     setState(() {
                       showCompletedOnly = false;
@@ -81,7 +95,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
             ],
             cancelButton: CupertinoActionSheetAction(
-              child: const Text('Cancellation'),
+              child: const Text(
+                'Clear',
+                style: TextStyle(fontFamily: 'mexe', color: Color(0xFF780000)),
+              ),
               isDefaultAction: true,
               onPressed: () {
                 context.pop();
@@ -119,14 +136,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     // Можно ограничить, например, от 0 до 5, где 0 = без фильтра
                     return Center(
                       child: Text(
-                        index == 0 ? "Cancellation" : 'Complexity $index',
+                        index == 0
+                            ? "Clear"
+                            : getChickenRecipeDifficulty(index),
+                        style: TextStyle(
+                          fontFamily: 'mexe',
+                          color: Color(0xFF4B0000),
+                        ),
                       ),
                     );
                   }),
                 ),
               ),
               CupertinoButton(
-                child: const Text('Apply'),
+                child: const Text(
+                  'Apply',
+                  style: TextStyle(fontFamily: 'mexe'),
+                ),
                 onPressed: () {
                   setState(() {
                     showDiffulty = tempDifficulty;
@@ -139,6 +165,40 @@ class _HomeScreenState extends State<HomeScreen> {
         );
       },
     );
+  }
+
+  String getChickenRecipeDifficulty(int level) {
+    switch (level) {
+      case 1:
+        return "Easy";
+      case 2:
+        return "Basic";
+      case 3:
+        return "Medium";
+      case 4:
+        return "Hard";
+      case 5:
+        return "Expert";
+      default:
+        return "Invalid";
+    }
+  }
+
+  String getSpicinessLevel(int level) {
+    switch (level) {
+      case 1:
+        return "Mild";
+      case 2:
+        return "Low";
+      case 3:
+        return "Medium";
+      case 4:
+        return "Hot";
+      case 5:
+        return "Fiery";
+      default:
+        return "Invalid";
+    }
   }
 
   void showSpicyPicker() {
@@ -167,13 +227,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: List<Widget>.generate(6, (int index) {
                     // Можно ограничить, например, от 0 до 5, где 0 = без фильтра
                     return Center(
-                      child: Text(index == 0 ? "Cancellation" : 'Spicy $index'),
+                      child: Text(
+                        index == 0 ? "Clear" : getSpicinessLevel(index),
+                        style: TextStyle(
+                          fontFamily: 'mexe',
+                          color: Color(0xFF4B0000),
+                        ),
+                      ),
                     );
                   }),
                 ),
               ),
               CupertinoButton(
-                child: const Text('Apply'),
+                child: const Text(
+                  'Apply',
+                  style: TextStyle(fontFamily: 'mexe'),
+                ),
                 onPressed: () {
                   setState(() {
                     showSpicy = tempSpicy;
@@ -385,6 +454,9 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 51,
           width: getWidth(context, baseSize: 221),
           child: CupertinoTextField(
+            onTapOutside: (event) {
+              FocusScope.of(context).unfocus();
+            },
             onChanged: (value) {
               setState(() {
                 searchQuery = value;
@@ -395,7 +467,6 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.only(right: 10, left: 10),
               child: AppIcon(asset: IconProvider.search.buildImageUrl()),
             ),
-            textAlign: TextAlign.center,
             padding: EdgeInsets.symmetric(vertical: 16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),

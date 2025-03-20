@@ -9,6 +9,7 @@ import 'package:cluckmazing_recipe/ui_kit/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/utils/animated_button.dart';
 
@@ -167,10 +168,28 @@ class ShopScreen extends StatelessWidget {
                         ],
                       ),
             ),
-            const AppBarWidget(
-              widgets: Text(
-                'Shopping List',
-                style: TextStyle(color: Colors.white, fontSize: 32),
+            AppBarWidget(
+              widgets: Expanded(
+                child: Row(
+                  children: [
+                    const Text(
+                      'Shopping List',
+                      style: TextStyle(color: Colors.white, fontSize: 32),
+                    ),
+                    Spacer(),
+                    AnimatedButton(
+                      child: const Icon(
+                        size: 32,
+                        Icons.history_rounded,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        context.push('/home/history');
+                      },
+                    ),
+                    Gap(32)
+                  ],
+                ),
               ),
               hasBackButton: true,
             ),
