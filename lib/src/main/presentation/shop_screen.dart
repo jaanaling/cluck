@@ -187,7 +187,7 @@ class ShopScreen extends StatelessWidget {
                         context.push('/home/history');
                       },
                     ),
-                    Gap(32)
+                    Gap(32),
                   ],
                 ),
               ),
@@ -218,7 +218,11 @@ class ShopScreen extends StatelessWidget {
                         elevation: 1,
                         fixedSize: Size(161, 61),
                         color: ButtonColors.yellow,
-                        onPressed: () => removeAll(context),
+                        onPressed: () {
+                          for (int i = 0; i < state.shoppingList.length; i++) {
+                            buyItem(state.shoppingList[i], context);
+                          }
+                        },
                         child: const Text(
                           'buy all',
                           style: TextStyle(fontSize: 29, color: Colors.white),

@@ -38,7 +38,7 @@ class HistoryScreen extends StatelessWidget {
                         children: [
                           ListView.separated(
                             padding: const EdgeInsets.symmetric(horizontal: 15),
-                            itemCount: state.shoppingList.length,
+                            itemCount: state.history.length,
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
                             separatorBuilder: (_, __) => const Gap(16),

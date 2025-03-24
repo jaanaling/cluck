@@ -1,4 +1,3 @@
-import 'package:advertising_id/advertising_id.dart';
 import 'package:cluckmazing_recipe/src/core/utils/app_icon.dart';
 import 'package:cluckmazing_recipe/src/core/utils/icon_provider.dart';
 import 'package:cluckmazing_recipe/src/core/utils/size_utils.dart';
@@ -21,19 +20,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    requestIdfa();
+    startLoading(context);
   }
 
   Future<void> startLoading(BuildContext context) async {
-    await Future.delayed(const Duration(milliseconds: 1000));
+    await Future.delayed(const Duration(milliseconds: 2000));
 
     context.go(RouteValue.home.path);
-  }
-
-  Future<void> requestIdfa() async {
-    await Future.delayed(const Duration(milliseconds: 1000));
-
-    final adId = await AdvertisingId.id(true);
   }
 
   @override
@@ -46,10 +39,6 @@ class _SplashScreenState extends State<SplashScreen> {
     final height = MediaQuery.of(context).size.height;
     return BlocBuilder<AppBloc, AppState>(
       builder: (context, state) {
-        if (state is AppLoaded) {
-          startLoading(context);
-        }
-
         return Stack(
           alignment: Alignment.center,
           children: [
@@ -69,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
               fit: BoxFit.fitWidth,
             ),
             Positioned(
-              bottom: getWidth(context, baseSize: 46) + 10,
+              bottom: !isIpad(context)? getWidth(context, baseSize: 46) + 10:getWidth(context, baseSize: 46) + 30,
               left: 0,
               right: 0,
               child: ChickenAnimation(),

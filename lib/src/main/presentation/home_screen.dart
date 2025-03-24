@@ -89,6 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     setState(() {
                       showCompletedOnly = false;
                       showDiffulty = 0;
+                      showSpicy = 0;
                     });
                     context.pop();
                   },
@@ -96,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
             cancelButton: CupertinoActionSheetAction(
               child: const Text(
-                'Clear',
+                'Cancel',
                 style: TextStyle(fontFamily: 'mexe', color: Color(0xFF780000)),
               ),
               isDefaultAction: true,
